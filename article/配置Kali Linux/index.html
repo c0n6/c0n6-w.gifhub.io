@@ -140,14 +140,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -237,15 +237,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start  </span><br><span class="line">或者  </span><br><span class="line">service ssh start</span><br></pre></td></tr></table></figure>
 <p>查看SSH服务状态是否正常运行命令为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh status</span><br><span class="line">或者</span><br><span class="line">service ssh status</span><br></pre></td></tr></table></figure>
-<img src="kali-linux-web-pentest-status.jpg" width="70%" height="70%">
+<img src="kali-linux-web-pentest-status.jpg" width="85%" height="85%">
 <h2 id="使用ssh登陆工具puttysecurecrtxshell登陆kali">使用SSH登陆工具(Putty\SecureCRT\XShell)登陆kali</h2>
 <p>终端界面命令登陆：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh xxx.xxx.xxx.xxx</span><br></pre></td></tr></table></figure>
 <p>输入用户名、密码连接kali。</p>
 <h2 id="置系统自动启动ssh服务">置系统自动启动SSH服务</h2>
-<h3 id="方法一">方法一：</h3>
+<h3 id="自启动方法一">自启动方法一</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sysv-rc-conf</span><br><span class="line">sysv-rc-conf --list | grep ssh</span><br><span class="line">sysv-rc-conf ssh on  //系统自动启动SSH服务</span><br><span class="line">sysv-rc-conf ssh off  // 关闭系统自动启动SSH服务</span><br></pre></td></tr></table></figure>
-<h3 id="方法二">方法二：</h3>
+<h3 id="自启动方法二">自启动方法二</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d ssh <span class="built_in">enable</span>  //系统自动启动SSH服务</span><br><span class="line">update-rc.d ssh disabled // 关闭系统自动启动SSH服务</span><br></pre></td></tr></table></figure>
 <h1 id="基础配置">基础配置</h1>
 <h2 id="安装和运行owasp-mantra">安装和运行OWASP Mantra</h2>
@@ -261,16 +261,56 @@
 <h3 id="操作步骤">操作步骤</h3>
 <p>打开终端并执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install owasp-mantra-ff</span><br></pre></td></tr></table></figure>
-<img src="kali-linux-web-pentest-cookbook-1.jpg" width="70%" height="70%">
+<img src="kali-linux-web-pentest-cookbook-1.jpg" width="85%" height="85%">
 <p>终端中输入以下命令即可启动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">owasp-mantra-ff</span><br></pre></td></tr></table></figure>
 <h2 id="配置-iceweasel-浏览器">配置 Iceweasel 浏览器</h2>
 <p>如果我们不喜欢 OWASP Mantra，我们可以使用 Firefox 的最新版本，并安装我们自己的测试相关插件。Kali Linux 包含了 Iceweasel，另一个 Firefox 的变体。我们这里会使用它来看看如何在它上面安装我们的测试工具</p>
 <h3 id="操作步骤">操作步骤</h3>
-<p>打开 Iceweasel 并访问 Tools | Add-ons 。就像下面的截图这样:</p>
-<img src="kali-linux-web-pentest-cookbook-2.jpg" width="70%" height="70%">
+<p>打开 Iceweasel 并访问 Tools | Add-ons。就像下面的截图这样:</p>
+<img src="kali-linux-web-pentest-cookbook-2.jpg" width="85%" height="85%">
+<p>在搜素框中，输入 tamper data 并按下回车。</p>
+<img src="kali-linux-web-pentest-cookbook-3.jpg" width="85%" height="85%">
+<p>在 Tamper Data 插件中点击 Install, 依次搜索安装cookies manager+、Firebug、Hackbar、HTTP Requester、Passive Recon等工具。</p>
+<ul>
+<li>
+<p>Cookies Manager+ ：这个插件允许我们查看，并有时候修改浏览器从应用受到的 Cookie<br>
+的值。</p>
+</li>
+<li>
+<p>Firebug ：这是任何 Web 开发者的必需品。它的主要功能是网页的内嵌调试器。它也在<br>
+你对页面执行一些客户端修改时非常有用。</p>
+</li>
+<li>
+<p>Hackbar ：这是一个非常简单的插件，帮助我们尝试不同的输入值，而不需要修改或重<br>
+写完整的 URL。在手动检查跨站脚本工具和执行注入的时候，我们会很频繁地使用它。</p>
+</li>
+<li>
+<p>Http Requester ：使用这个工具，我们就能构造 HTTP 链接，包括 GET、POST 和 PUT<br>
+方法，并观察来自服务器的原始响应。</p>
+</li>
+<li>
+<p>Passive Recon ：它允许我们获得关于网站被访问的公共信息，通过查询 DNS 记录、<br>
+WHOIS、以及搜索信息，例如邮件地址、链接和 Google 中的合作者。</p>
+</li>
+<li>
+<p>Tamper Data ：这个插件能够在请求由浏览器发送之后，捕获任何到达服务器的请求。这<br>
+提供给我们了在将数据引入应用表单之后，在它到达服务器之前修改它的机会。</p>
+</li>
+</ul>
+<h3 id="更多的插件">更多的插件</h3>
+<p>有一些插件同样对 Web 应用渗透测试者有用，它们是：</p>
+<ul>
+<li>XSS Me</li>
+<li>SQL Inject Me</li>
+<li>FoxyProxy</li>
+<li>iMacros</li>
+<li>FirePHP</li>
+<li>RESTClient</li>
+<li>Wappalyzer</li>
+</ul>
 <h2 id="安装-w3af">安装 W3af</h2>
-<img src="cmd.png" width="70%" height="70%">
+<img src="cmd.png" width="85%" height="85%">
 打开终端，首先升级下Kali
 输入命令：
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
@@ -304,7 +344,42 @@
 <p>重新再打开个终端，设置用代理启动浏览器firefox</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains firefox</span><br></pre></td></tr></table></figure>
 <p>当然这个代理浏览器，也能代理其他软件，比如代理sqlmap</p>
-<pre><code class="language-bash">proxychains sqlmap -u &quot;www.baidu.com&quot;</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains sqlmap -u <span class="string">"www.baidu.com"</span></span><br></pre></td></tr></table></figure>
+<h1 id="创建漏洞虚拟机">创建漏洞虚拟机</h1>
+<p>现在我们准备好创建我们的第一个虚拟机，它是托管 Web 应用的服务器，我们使用应用来实<br>
+践和提升我们的渗透测试技巧。</p>
+<p>我们会使用叫做 OWASP BWA（ Broken Web Apps）的虚拟机，它是存在漏洞的 Web 应用<br>
+的集合，特别为执行安全测试而建立。</p>
+<h2 id="操作步骤">操作步骤</h2>
+<p>访问 <a href="http://sourceforge.net/projects/owaspbwa/files/" target="_blank" rel="noopener">http://sourceforge.net/projects/owaspbwa/files/</a> 并下载最新版本的 .ova 文件。</p>
+<img src="kali-linux-web-pentest-cookbook-4.jpg" width="85%" height="85%">
+<p>使用VMware或者VirtualBox等虚拟机导入虚拟机文件，在机器启动之后，我们会被询问登录名和密码，输入 root作为登录名，owaspbwa 作为密码，这样设置。</p>
+<img src="kali-linux-web-pentest-cookbook-5.jpg" width="85%" height="85%">
+<p>OWASP BWA 是一个项目，致力于向安全从业者和爱好者提供安全环境，用于提升攻击技巧，并识别和利用 Web 应用中的漏洞，以便帮助开发者和管理员修复和防止漏洞。这个虚拟机包含不同类型的 Web 应用，一些基于 PHP，一些基于 Java，甚至还有一些基于 .NET 的漏洞应用。也有一些已知应用的漏洞版本，例如 WordPress 或 Joomla。</p>
+<h2 id="了解漏洞-vm-上的-web-应用">了解漏洞 VM 上的 Web 应用</h2>
+<p>OWASP BWA 包含许多 Web 应用，其内部含有常见攻击的漏洞。它们中的一些专注于一些<br>
+特定技巧的实验，而其它尝试复制碰巧含有漏洞的，真实世界的应用。</p>
+<p>这个秘籍中，我们会探索 vulnerable_vm，并了解一些其中包含的应用。</p>
+<p>vulnerable_vm 启动后，打开 Kali 主机的 Web 浏览器并访问 <a href="http://192.168.56.102" target="_blank" rel="noopener">http://192.168.56.102</a> 。你<br>
+会看到服务器所包含的所有应用列表。</p>
+<img src="kali-linux-web-pentest-cookbook-6.jpg" width="85%" height="85%">
+<p>让我们访问 Damn Vulnerable Web Application，使用 admin 作为用户名， admin 作为密码。我们可以看到左边的菜单：菜单包含我们可以实验的所有漏洞的链接：爆破、命令执行、SQL 注入，以及其它。同样，DVWA 安全这部分是我们用于配置漏洞输入的安全（或复杂性）等级的地方。</p>
+<img src="kali-linux-web-pentest-cookbook-7.jpg" width="85%" height="85%">
+<p>登出并返回服务器的主页。</p>
+<p>现在我们点击 OWASP <a href="http://WebGoat.NET" target="_blank" rel="noopener">WebGoat.NET</a> 。这是个 .NET 应用，其中我们可以实验文件和代码注入攻击，跨站脚本，和加密漏洞。它也含有 WebGoat Coins Customer Portal，它模拟了商店应用，并可以用于实验漏洞利用和漏洞识别。</p>
+<img src="kali-linux-web-pentest-cookbook-8.jpg" width="85%" height="85%">
+<p>现在返回服务器的主页。</p>
+<p>另一个包含在虚拟机中的有趣应用是 BodgeIt。它是基于 JSP 的在线商店的最小化版本。它拥有我们可以加入购物车的商品列表，带有高级选项的搜索页面，为新用户准备的注册表单，以及登录表单。这里没有到漏洞的直接引用，反之，我们需要自己找它们。</p>
+<img src="kali-linux-web-pentest-cookbook-9.jpg" width="85%" height="85%">
+<p>我们在一个秘籍中不能浏览所有应用，但是我们会在这本书中使用它们。</p>
+<h3 id="主页上的应用组织为六组">主页上的应用组织为六组</h3>
+<ul>
+<li>训练应用：这些应用分为几部分，专注于实验特定的漏洞或攻击技巧。他它们中的一些包含教程、解释或其他形式的指导。</li>
+<li>真实的，内部含有漏洞的应用：这些应用的行为就像真实世界的应用（商店】博客或社交网络）一样，但是开发者出于训练目的在内部设置了漏洞。</li>
+<li>真实应用的旧（漏洞）版本：真是应用的旧版本，例如 WordPress 和 Joomla 含有已知的可利用的漏洞。这对于测试我们的漏洞识别技巧非常实用。</li>
+<li>用于测试工具的应用：这个组中的应用可以用做自动化漏洞扫描器的基准线测试。演示页面/小应用：这些小应用拥有一个或一些漏洞，仅仅出于演示目的。</li>
+<li>OWASP 演示应用：OWASP AppSensor 是个有趣的应用，它模拟了社交网络并含有一些漏洞。但是他会记录任何攻击的意图，这在尝试学习的时候很有帮助。例如，如何绕过一些安全设备，例如网络应用防火墙。</li>
+</ul>
 
                 
 
@@ -360,7 +435,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装-kali"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; Kali</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#更新源"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x66F4;&#x65B0;&#x6E90;</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用ssh进行远程登陆"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;ssh&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x767B;&#x9646;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置ssh参数"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;SSH&#x53C2;&#x6570;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动ssh服务"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">&#x542F;&#x52A8;SSH&#x670D;&#x52A1;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用ssh登陆工具puttysecurecrtxshell登陆kali"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;SSH&#x767B;&#x9646;&#x5DE5;&#x5177;(Putty\SecureCRT\XShell)&#x767B;&#x9646;kali</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#置系统自动启动ssh服务"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">&#x7F6E;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x542F;&#x52A8;SSH&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#方法一"><span class="toc-nav-number">3.4.1.</span> <span class="toc-nav-text">&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#方法二"><span class="toc-nav-number">3.4.2.</span> <span class="toc-nav-text">&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#基础配置"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x57FA;&#x7840;&#x914D;&#x7F6E;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装和运行owasp-mantra"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;&#x548C;&#x8FD0;&#x884C;OWASP Mantra</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置-iceweasel-浏览器"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E; Iceweasel &#x6D4F;&#x89C8;&#x5668;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装-w3af"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; W3af</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用代理服务"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装shadowsocks"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;shadowsocks</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置json文件"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;json&#x6587;&#x4EF6;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置proxychains"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;ProxyChains</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动代理"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">&#x542F;&#x52A8;&#x4EE3;&#x7406;</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装-kali"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; Kali</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#更新源"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x66F4;&#x65B0;&#x6E90;</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用ssh进行远程登陆"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;ssh&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x767B;&#x9646;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置ssh参数"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;SSH&#x53C2;&#x6570;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动ssh服务"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">&#x542F;&#x52A8;SSH&#x670D;&#x52A1;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用ssh登陆工具puttysecurecrtxshell登陆kali"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;SSH&#x767B;&#x9646;&#x5DE5;&#x5177;(Putty\SecureCRT\XShell)&#x767B;&#x9646;kali</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#置系统自动启动ssh服务"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">&#x7F6E;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x542F;&#x52A8;SSH&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自启动方法一"><span class="toc-nav-number">3.4.1.</span> <span class="toc-nav-text">&#x81EA;&#x542F;&#x52A8;&#x65B9;&#x6CD5;&#x4E00;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自启动方法二"><span class="toc-nav-number">3.4.2.</span> <span class="toc-nav-text">&#x81EA;&#x542F;&#x52A8;&#x65B9;&#x6CD5;&#x4E8C;</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#基础配置"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x57FA;&#x7840;&#x914D;&#x7F6E;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装和运行owasp-mantra"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;&#x548C;&#x8FD0;&#x884C;OWASP Mantra</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置-iceweasel-浏览器"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E; Iceweasel &#x6D4F;&#x89C8;&#x5668;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#更多的插件"><span class="toc-nav-number">4.2.2.</span> <span class="toc-nav-text">&#x66F4;&#x591A;&#x7684;&#x63D2;&#x4EF6;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装-w3af"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; W3af</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用代理服务"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装shadowsocks"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;shadowsocks</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置json文件"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;json&#x6587;&#x4EF6;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置proxychains"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;ProxyChains</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动代理"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">&#x542F;&#x52A8;&#x4EE3;&#x7406;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#创建漏洞虚拟机"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">&#x521B;&#x5EFA;&#x6F0F;&#x6D1E;&#x865A;&#x62DF;&#x673A;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#了解漏洞-vm-上的-web-应用"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">&#x4E86;&#x89E3;&#x6F0F;&#x6D1E; VM &#x4E0A;&#x7684; Web &#x5E94;&#x7528;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#主页上的应用组织为六组"><span class="toc-nav-number">6.2.1.</span> <span class="toc-nav-text">&#x4E3B;&#x9875;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x7EC4;&#x7EC7;&#x4E3A;&#x516D;&#x7EC4;</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
