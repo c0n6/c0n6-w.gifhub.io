@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [Kali] Kali下载安装并安装W3af - C0N6 | Zone
+          [Kali] 配置Kali Linux - C0N6 | Zone
         
     </title>
 
-    <link rel="canonical" href="http://c0n6.com/article/Kali下载安装并安装W3af/">
+    <link rel="canonical" href="http://c0n6.com/article/配置Kali Linux/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -89,7 +89,7 @@
                               <a class="tag" href="/tags/#Kali" title="Kali">Kali</a>
                             
                         </div>
-                        <h1>[Kali] Kali下载安装并安装W3af</h1>
+                        <h1>[Kali] 配置Kali Linux</h1>
                         <h2 class="subheading">Kali系列学习笔记</h2>
                         <span class="meta">
                             Posted by C0N6 on
@@ -215,20 +215,66 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kali.org/downloads/</span><br></pre></td></tr></table></figure>
 <p>在虚拟机上运行就要对应找虚拟机版本，官方网站已经有制作的好的虚拟机端下载。这里我下载的是 Kali Linux 32 Bit Vbox 版本，具体下载连接如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://images.offensive-security.com/virtual-images/kali-linux-2018.3-vbox-i386.ova</span><br></pre></td></tr></table></figure>
-<p>下载好后用虚拟机加载，开机启动，进入kali主界面，</p>
-<h1 id="安装-w3af">安装 W3af</h1>
-<img src="cmd.png" width="70%" height="70%">
-打开终端，首先升级下Kali
-输入命令：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
-<h2 id="更换软件库源">更换软件库源</h2>
+<p>下载好后用虚拟机加载，当然也可以下载正常版本的Kali，对应选择软件版本，这里我显泽x64：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Kali Linux 64 Bit</span><br><span class="line">http://cdimage.kali.org/kali-2018.3a/kali-linux-2018.3a-amd64.iso</span><br></pre></td></tr></table></figure>
+<p>下载好后可以安装在电脑上，同样也可以通过虚拟机安装，这里就不详细介绍，安装完毕后开机启动，进入kali主界面。</p>
+<h1 id="更新源">更新源</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">leafpad /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#中科大</span></span><br><span class="line">deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#阿里云</span></span><br><span class="line">deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#清华大学</span></span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line"></span><br><span class="line"><span class="comment">#浙大</span></span><br><span class="line">deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line">deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line"></span><br><span class="line"><span class="comment">#东软大学</span></span><br><span class="line">deb http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib</span><br><span class="line">deb-src http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#官方源</span></span><br><span class="line">deb http://http.kali.org/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://http.kali.org/kali kali-rolling main non-free contrib</span><br></pre></td></tr></table></figure>
 <p>保存后之后回到命令行下执行命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get upgrade &amp;&amp; apt-get dist-upgrade</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get clean <span class="comment">#删除以下载的包</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot <span class="comment">#重新启动</span></span><br></pre></td></tr></table></figure>
-<p>##从git仓库下载w3af</p>
+<h1 id="使用ssh进行远程登陆">使用ssh进行远程登陆</h1>
+<h2 id="配置ssh参数">配置SSH参数</h2>
+<p>修改sshd_config文件，命令为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>打开文件后寻找配置如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#PermitRootLogin without-password     #修改为 PermitRootLogin yes</span></span><br><span class="line"><span class="comment">#PasswordAuthentication no            #修改为 PasswordAuthentication yes</span></span><br></pre></td></tr></table></figure>
+<p>输入：wq 回车 保存并退出。</p>
+<h2 id="启动ssh服务">启动SSH服务</h2>
+<p>启动命令为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start  </span><br><span class="line">或者  </span><br><span class="line">service ssh start</span><br></pre></td></tr></table></figure>
+<p>查看SSH服务状态是否正常运行命令为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh status</span><br><span class="line">或者</span><br><span class="line">service ssh status</span><br></pre></td></tr></table></figure>
+<img src="kali-linux-web-pentest-status.jpg" width="70%" height="70%">
+<h2 id="使用ssh登陆工具puttysecurecrtxshell登陆kali">使用SSH登陆工具(Putty\SecureCRT\XShell)登陆kali</h2>
+<p>终端界面命令登陆：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh xxx.xxx.xxx.xxx</span><br></pre></td></tr></table></figure>
+<p>输入用户名、密码连接kali。</p>
+<h2 id="置系统自动启动ssh服务">置系统自动启动SSH服务</h2>
+<h3 id="方法一">方法一：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sysv-rc-conf</span><br><span class="line">sysv-rc-conf --list | grep ssh</span><br><span class="line">sysv-rc-conf ssh on  //系统自动启动SSH服务</span><br><span class="line">sysv-rc-conf ssh off  // 关闭系统自动启动SSH服务</span><br></pre></td></tr></table></figure>
+<h3 id="方法二">方法二：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d ssh <span class="built_in">enable</span>  //系统自动启动SSH服务</span><br><span class="line">update-rc.d ssh disabled // 关闭系统自动启动SSH服务</span><br></pre></td></tr></table></figure>
+<h1 id="基础配置">基础配置</h1>
+<h2 id="安装和运行owasp-mantra">安装和运行OWASP Mantra</h2>
+<p>OWASP（开放 Web 应用安全项目，<a href="https://www.owasp.org/%EF%BC%89%E4%B8%AD%E7%9A%84%E7%A0%94%E7%A9%B6%E5%91%98%E5%B7%B2%E7%BB%8F%E5%B0%86" target="_blank" rel="noopener">https://www.owasp.org/）中的研究员已经将</a> Mozilla FIrefox 与 大量的插件集成，这些插件用于帮助渗透测试者和开发者测试 Web 应用的 bug 或 安全缺陷。这个秘籍中，我们会在 Kali 上安装 OWASP Mantra（<a href="http://www.getmantra.com/%EF%BC%89" target="_blank" rel="noopener">http://www.getmantra.com/）</a> 首次运行它，并查看一些特性。</p>
+<p>大多数 Web 应用渗透测试都通过浏览器来完成。这就是我们为什么需要一个带有一组工具的<br>
+浏览器来执行这样一个任务。OWASP Mantra 包含一系列插件来执行任务，例如：</p>
+<ul>
+<li>嗅探和拦截 HTTP 请求</li>
+<li>调试客户端代码</li>
+<li>查看和修改 Cookie</li>
+<li>收集关于站点和应用的信息</li>
+</ul>
+<h3 id="操作步骤">操作步骤</h3>
+<p>打开终端并执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install owasp-mantra-ff</span><br></pre></td></tr></table></figure>
+<img src="kali-linux-web-pentest-cookbook-1.jpg" width="70%" height="70%">
+<p>终端中输入以下命令即可启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">owasp-mantra-ff</span><br></pre></td></tr></table></figure>
+<h2 id="配置-iceweasel-浏览器">配置 Iceweasel 浏览器</h2>
+<p>如果我们不喜欢 OWASP Mantra，我们可以使用 Firefox 的最新版本，并安装我们自己的测试相关插件。Kali Linux 包含了 Iceweasel，另一个 Firefox 的变体。我们这里会使用它来看看如何在它上面安装我们的测试工具</p>
+<h3 id="操作步骤">操作步骤</h3>
+<p>打开 Iceweasel 并访问 Tools | Add-ons 。就像下面的截图这样:</p>
+<img src="kali-linux-web-pentest-cookbook-2.jpg" width="70%" height="70%">
+<h2 id="安装-w3af">安装 W3af</h2>
+<img src="cmd.png" width="70%" height="70%">
+打开终端，首先升级下Kali
+输入命令：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<p>从git仓库下载w3af</p>
 <p>输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/andresriancho/w3af.git</span><br></pre></td></tr></table></figure>
 <p>静静等待克隆完成…</p>
@@ -243,6 +289,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install npm  <span class="comment">#安装npm</span></span><br><span class="line">apt-get build-dep python-lxml  <span class="comment">#部署python-lxml</span></span><br></pre></td></tr></table></figure>
 <p>然后再重新进入tmp文件夹，并运行w3af_dependency_install.sh 即可成功。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">./w3af_dependency_install.sh</span><br></pre></td></tr></table></figure>
+<h1 id="使用代理服务">使用代理服务</h1>
+<p>代理软件有很多中，这里就只拿shadowsocks作为例子：</p>
+<h2 id="安装shadowsocks">安装shadowsocks</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install shadowsocks</span><br></pre></td></tr></table></figure>
+<h2 id="配置json文件">配置json文件</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"server"</span>:<span class="string">"ip或者域名"</span>,     <span class="comment">##填写服务器外网ip地址</span></span><br><span class="line"><span class="string">"server_port"</span>:8000,  <span class="comment">##代理端口</span></span><br><span class="line"><span class="string">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line"><span class="string">"local_port"</span>:1080, <span class="comment">##本地监听端口</span></span><br><span class="line"><span class="string">"password"</span>:<span class="string">""</span>,   <span class="comment">##连接密码</span></span><br><span class="line"><span class="string">"timeout"</span>:300,</span><br><span class="line"><span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>, <span class="comment">##加密方式</span></span><br><span class="line"><span class="string">"dast_open"</span>:<span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置proxychains">配置ProxyChains</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">leafpad /etc/proxychains.conf</span><br></pre></td></tr></table></figure>
+<p>在打开的配置文件最下添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoks5 127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<h2 id="启动代理">启动代理</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslocal -c /etc/shadowsocks/server.json</span><br></pre></td></tr></table></figure>
+<p>重新再打开个终端，设置用代理启动浏览器firefox</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains firefox</span><br></pre></td></tr></table></figure>
+<p>当然这个代理浏览器，也能代理其他软件，比如代理sqlmap</p>
+<pre><code class="language-bash">proxychains sqlmap -u &quot;www.baidu.com&quot;</code></pre>
 
                 
 
@@ -298,7 +360,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装-kali"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; Kali</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装-w3af"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; W3af</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#更换软件库源"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">&#x66F4;&#x6362;&#x8F6F;&#x4EF6;&#x5E93;&#x6E90;</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装-kali"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; Kali</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#更新源"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x66F4;&#x65B0;&#x6E90;</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用ssh进行远程登陆"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;ssh&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x767B;&#x9646;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置ssh参数"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;SSH&#x53C2;&#x6570;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动ssh服务"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">&#x542F;&#x52A8;SSH&#x670D;&#x52A1;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用ssh登陆工具puttysecurecrtxshell登陆kali"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;SSH&#x767B;&#x9646;&#x5DE5;&#x5177;(Putty\SecureCRT\XShell)&#x767B;&#x9646;kali</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#置系统自动启动ssh服务"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">&#x7F6E;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x542F;&#x52A8;SSH&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#方法一"><span class="toc-nav-number">3.4.1.</span> <span class="toc-nav-text">&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#方法二"><span class="toc-nav-number">3.4.2.</span> <span class="toc-nav-text">&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#基础配置"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x57FA;&#x7840;&#x914D;&#x7F6E;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装和运行owasp-mantra"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;&#x548C;&#x8FD0;&#x884C;OWASP Mantra</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">4.1.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置-iceweasel-浏览器"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E; Iceweasel &#x6D4F;&#x89C8;&#x5668;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装-w3af"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">&#x5B89;&#x88C5; W3af</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用代理服务"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装shadowsocks"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;shadowsocks</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置json文件"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;json&#x6587;&#x4EF6;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配置proxychains"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">&#x914D;&#x7F6E;ProxyChains</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动代理"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">&#x542F;&#x52A8;&#x4EE3;&#x7406;</span></a></li></ol></li></ol>
         
         </div>
       </aside>
