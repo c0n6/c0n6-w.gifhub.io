@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          [Kali] 信息收集 - C0N6 | Zone
+        
+    </title>
+
+    <link rel="canonical" href="http://c0n6.com/article/信息收集/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_header.png')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+                            
+                        </div>
+                        <h1>[Kali] 信息收集</h1>
+                        <h2 class="subheading">This is hexo theme Demo.</h2>
+                        <span class="meta">
+                            Posted by C0N6 on
+                            2018-10-30
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">C0N6</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="枚举服务">枚举服务</h1>
+<p>枚举是一类程序，它允许用户从一个网络中收集某一类的所有相关信息。本节将介绍DNS枚举和SNMP枚举技术。DNS枚举可以收集本地所有DNS服务和相关条目。DNS枚举可以帮助用户收集目标组织的关键信息，如用户名、计算机名和IP地址等，为了获取这些信息，用户可以使用DNSenum工具。要进行SNMP枚举，用户需要使用SnmpEnum工具。SnmpEnum是一个强大的SNMP枚举工具，它允许用户分析一个网络内SNMP信息传输。</p>
+<h2 id="dns枚举工具dnsenum">DNS枚举工具DNSenum</h2>
+<p>DNSenum是一款非常强大的域名信息收集工具。它能够通过谷歌或者字典文件猜测可能存在的域名，并对一个网段进行反向查询。它不仅可以查询网站的主机地址信息、域名服务器和邮件交换记录，还可以在域名服务器上执行axfr请求，然后通过谷歌脚本得到扩展域名信息，提取子域名并查询，最后计算C类地址并执行whois查询，执行反向查询，把地址段写入文件。本小节将介绍使用DNSenum工具检查DNS枚举。在终端执行如下所示的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsenum --enum benet.com </span></span><br><span class="line">dnsenum.pl VERSION:1.2.3 </span><br><span class="line"> 第4章  信息收集 </span><br><span class="line">Warning: can<span class="string">'t load Net::Whois::IP module, whois queries disabled. </span></span><br><span class="line"><span class="string">-----   benet.com   ----- </span></span><br><span class="line"><span class="string">Host'</span>s addresses: </span><br><span class="line">__________________ </span><br><span class="line">benet.com.                               86400    IN    A       192.168.41.131 </span><br><span class="line">benet.com.                               86400    IN    A       127.0.0.1 </span><br><span class="line">Name Servers: </span><br><span class="line">______________ </span><br><span class="line">benet.com.                               86400    IN   A        127.0.0.1 </span><br><span class="line">benet.com.                               86400    IN   A        192.168.41.131 </span><br><span class="line">www.benet.com.                          86400    IN   A        192.168.41.131 </span><br><span class="line">Mail (MX) Servers: </span><br><span class="line">___________________ </span><br><span class="line">mail.benet.com.                         86400    IN    A       192.168.41.2 </span><br><span class="line">Trying Zone Transfers and getting Bind Versions:</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了DNS服务的详细信息。其中，包括主机地址、域名服务地址和邮件服务地址。如果幸运的话，还可以看到一个区域传输。<br>
+使用DNSenum工具检查DNS枚举时，可以使用dnsenum的一些附加选项，如下所示。<br>
+–threads [number]：设置用户同时运行多个进程数。</p>
+<ul>
+<li>-r：允许用户启用递归查询。</li>
+<li>-d：允许用户设置WHOIS请求之间时间延迟数（单位为秒）。</li>
+<li>-o：允许用户指定输出位置。</li>
+<li>-w：允许用户启用WHOIS请求。</li>
+</ul>
+<h2 id="dns枚举工具fierce">DNS枚举工具fierce</h2>
+<p>fierce工具和DNSenum工具性质差不多，其fierce主要是对子域名进行扫描和收集信息的。使用fierce工具获取一个目标主机上所有IP地址和主机信息。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># fierce -dns baidu.com</span></span><br><span class="line">DNS Servers <span class="keyword">for</span> baidu.com:</span><br><span class="line">        ns2.baidu.com</span><br><span class="line">        ns7.baidu.com</span><br><span class="line">        dns.baidu.com</span><br><span class="line">        ns3.baidu.com</span><br><span class="line">        ns4.baidu.com</span><br><span class="line">Trying zone transfer first…</span><br><span class="line">        Testing ns2.baidu.com</span><br><span class="line">                Request timed out or transfer not allowed.</span><br><span class="line">        Testing ns7.baidu.com</span><br><span class="line">                Request timed out or transfer not allowed.</span><br><span class="line">        Testing dns.baidu.com</span><br><span class="line">                Request timed out or transfer not allowed.</span><br><span class="line">        Testing ns3.baidu.com</span><br><span class="line">                Request timed out or transfer not allowed.</span><br><span class="line">        Testing ns4.baidu.com</span><br><span class="line">                Request timed out or transfer not allowed.</span><br><span class="line">Unsuccessful <span class="keyword">in</span> zone transfer (it was worth a shot)</span><br><span class="line">Okay, trying the good old fashioned way… brute force</span><br><span class="line">Checking <span class="keyword">for</span> wildcard DNS…</span><br><span class="line">        ** Found 94050052936.baidu.com at 123.125.81.12.</span><br><span class="line">        ** High probability of wildcard DNS.</span><br><span class="line">Now performing 2280 <span class="built_in">test</span>(s)…</span><br><span class="line">10.11.252.74  accounts.baidu.com</span><br><span class="line">172.22.15.16  agent.baidu.com</span><br><span class="line">180.76.3.56   antivirus.baidu.com</span><br><span class="line">10.81.7.51        ba.baidu.com</span><br><span class="line">172.18.100.200bd.baidu.com</span><br><span class="line">10.36.155.42  bh.baidu.com</span><br><span class="line">10.36.160.22  bh.baidu.com</span><br><span class="line">10.11.252.74  accounts.baidu.com</span><br><span class="line">……省略部分内容</span><br><span class="line">  61.135.163.0-255 : 1 hostnames found.</span><br><span class="line">  61.135.165.0-255 : 1 hostnames found.</span><br><span class="line">  61.135.166.0-255 : 1 hostnames found.</span><br><span class="line">  61.135.185.0-255 : 1 hostnames found.</span><br><span class="line">Done with Fierce scan: http://ha.ckers.org/fierce/</span><br><span class="line">Found 133 entries.</span><br><span class="line">Have a nice day.</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了baidu.com下所有的子域。从倒数第2行，可以看到总共找到133个条目。执行以上命令后，输出的内容较多。但是由于篇幅的原因，部分内容使用省略号（……）取代。<br>
+用户也可以通过提供一个单词列表执行相同的操作，执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># fierce -dns baidu.com -wordlist hosts.txt /tmp/output.txt</span></span><br></pre></td></tr></table></figure>
+<h2 id="snmp枚举工具snmpwalk">SNMP枚举工具Snmpwalk</h2>
+<p>Snmpwalk是一个SNMP应用程序。它使用SNMP的GETNEXT请求，查询指定的所有OID（SNMP协议中的对象标识）树信息，并显示给用户。本小节将演示Snmpwalk工具的使用。<br>
+【实例4-1】使用Snmpwalk命令测试Windows主机。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># snmpwalk -c public 192.168.41.138 -v 2c</span></span><br><span class="line">iso.3.6.1.2.1.1.1.0 = STRING: <span class="string">"Hardware: x86 Family 6 Model 42 Stepping 7 AT/AT COMPATIBLE - Software: Windows Version 6.1 (Build 7601 Multiprocessor Free)"</span></span><br><span class="line">iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.311.1.1.3.1.1</span><br><span class="line">iso.3.6.1.2.1.1.3.0 = Timeticks: (49046) 0:08:10.46</span><br><span class="line">iso.3.6.1.2.1.1.4.0 = <span class="string">""</span></span><br><span class="line">iso.3.6.1.2.1.1.5.0 = STRING: <span class="string">"WIN-RKPKQFBLG6C"</span></span><br><span class="line">iso.3.6.1.2.1.1.6.0 = <span class="string">""</span></span><br><span class="line">iso.3.6.1.2.1.1.7.0 = INTEGER: 76</span><br><span class="line">iso.3.6.1.2.1.2.1.0 = INTEGER: 19</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.1 = INTEGER: 1</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.2 = INTEGER: 2</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.3 = INTEGER: 3</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.4 = INTEGER: 4</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.5 = INTEGER: 5</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.6 = INTEGER: 6</span><br><span class="line">……</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.16 = INTEGER: 16</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.17 = INTEGER: 17</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.18 = INTEGER: 18</span><br><span class="line">iso.3.6.1.2.1.2.2.1.1.19 = INTEGER: 19</span><br><span class="line">iso.3.6.1.2.1.2.2.1.2.1 = Hex-STRING: 53 6F 66 74 77 61 72 65 20 4C 6F 6F 70 62 61 63</span><br><span class="line">6B 20 49 6E 74 65 72 66 61 63 65 20 31 00</span><br><span class="line">iso.3.6.1.2.1.2.2.1.2.2 = Hex-STRING: 57 41 4E 20 4D 69 6E 69 70 6F 72 74 20 28 53 53</span><br><span class="line">54 50 29 00</span><br><span class="line">iso.3.6.1.2.1.2.2.1.2.3 = Hex-STRING: 57 41 4E 20 4D 69 6E 69 70 6F 72 74 20 28 4C 32</span><br><span class="line">54 50 29 00</span><br><span class="line">iso.3.6.1.2.1.2.2.1.2.4 = Hex-STRING: 57 41 4E 20 4D 69 6E 69 70 6F 72 74 20 28 50 50</span><br><span class="line">……</span><br><span class="line">iso.3.6.1.2.1.55.1.8.1.5.11.16.254.128.0.0.0.0.0.0.149.194.132.179.177.254.120.40 = INTEGER: 1</span><br><span class="line">iso.3.6.1.2.1.55.1.8.1.5.12.16.254.128.0.0.0.0.0.0.0.0.94.254.192.168.41.138 = INTEGER: 1</span><br><span class="line">iso.3.6.1.2.1.55.1.8.1.5.13.16.32.1.0.0.157.56.106.184.52.243.8.98.63.87.214.117 = INTEGER: 1</span><br><span class="line">iso.3.6.1.2.1.55.1.8.1.5.13.16.254.128.0.0.0.0.0.0.52.243.8.98.63.87.214.117 = INTEGER: 1</span><br><span class="line">iso.3.6.1.2.1.55.1.9.0 = Gauge32: 9</span><br><span class="line">iso.3.6.1.2.1.55.1.10.0 = Counter32: 0</span><br></pre></td></tr></table></figure>
+<p>以上输出的信息显示了Windows主机192.168.41.138上的所有信息。<br>
+用户也可以使用snmpwalk命令枚举安装的软件。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># snmpwalk -c public 192.168.41.138 -v 1 | grep ftp</span></span><br></pre></td></tr></table></figure>
+<p>输出信息如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iso.3.6.1.2.1.25.4.2.1.5.3604 = STRING: <span class="string">"-k ftpsvc"</span></span><br></pre></td></tr></table></figure>
+<p>输出的信息表示192.168.41.138主机安装了ftp软件包。<br>
+使用Snmpwalk工具也可以枚举目标主机上打开的TCP端口。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># snmpwalk -c public 192.168.41.138 -v 1 | grep tcpConnState | cut -d "." -f6 | sort -nu</span></span><br><span class="line">21</span><br><span class="line">25</span><br><span class="line">80</span><br><span class="line">443</span><br></pre></td></tr></table></figure>
+<p>输出信息显示了192.168.41.138主机打开的端口。如21、25、80和443，总共打开了4个端口号。</p>
+<h2 id="snmp枚举工具snmpcheck">SNMP枚举工具Snmpcheck</h2>
+<p>Snmpcheck工具允许用户枚举SNMP设备的同时将结果以可读的方式输出。下面将演示该工具的使用。使用Snmpcheck工具通过SNMP协议获取192.168.41.138主机信息。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># snmpcheck -t 192.168.41.138</span></span><br></pre></td></tr></table></figure>
+<p>该命令输出信息较多，下面依次讲解每个部分。首先输出的是枚举运行信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">snmpcheck.pl v1.8 - SNMP enumerator</span><br><span class="line">Copyright (c) 2005-2011 by Matteo Cantoni (www.nothink.org)</span><br><span class="line"></span><br><span class="line"> [*] Try to connect to 192.168.41.138</span><br><span class="line"> [*] Connected to 192.168.41.138</span><br><span class="line"> [*] Starting enumeration at 2014-04-19 15:28:58</span><br></pre></td></tr></table></figure>
+<p>（1）获取系统信息，如主机名、操作系统类型及架构。结果如下所示：<br>
+<img src="00129.jpeg" width="85%" height="85%"></p>
+<p>从输出的信息中可以看到该系统的主机名为WIN-RKPKQFBLG6C、x86架构和Windows系统等信息。<br>
+（2）获取设备信息，如设备ID号、类型和状态等。结果如下所示：</p>
+<img src="00130.jpeg" width="85%" height="85%">
+<p>以上信息显示了该系统中所有设备相关信息，如打印设备、网络设备和处理器等。<br>
+（3）获取存储信息，如设备id、设备类型和文件系统类型等。结果如下所示：</p>
+<img src="00131.jpeg" width="85%" height="85%">
+<p>该部分显示了系统中所有磁盘。由于篇幅的原因，这里只贴了A和C盘的存储信息。这里以C盘为例，介绍一下输出的信息，包括设备类型、文件系统类型、空间大小、已用空间大小和剩余空间大小等。<br>
+（4）获取用户账户信息。结果如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[*] User accounts</span><br><span class="line">-----------------------------------------------</span><br><span class="line">Administrator</span><br><span class="line"> Guest</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了该系统中的有两个用户，分别是Administrator和Guest。<br>
+（5）获取进程信息，如进程ID、进程名和进程类型等。结果如下所示：</p>
+<img src="00132.jpeg" width="85%" height="85%">
+<p>输出信息的第一行表示该系统中共有44个进程。由于篇幅的原因，这里只列出了前几个运行的进程。第二行指定了进程类型：1表示不知名；2表示操作系统；3表示设备驱动；4表示应用程序。第三行指定了进程的状态：1表示正在运行；2表示可以运行；3表示不能运行；4表示无效的。第四行的内容是以列的形式显示：第一列表示进程ID；第二列表示进程名；第三列表示进程状态；第四列表示进程路径。<br>
+（6）获取网络信息，如TTL值、TCP段和数据元。结果如下所示：</p>
+<img src="00133.jpeg" width="85%" height="85%">
+<p>以上信息显示了该目标系统中网络的相关信息，如默认TTL值、收到TCP段、发送TCP段和重发TCP段等。<br>
+（7）获取网络接口信息，如接口状态、速率、IP地址和子网掩码等。结果如下所示：</p>
+<img src="00134.jpeg" width="85%" height="85%">
+<p>以上信息中显示了loopback接口的相关信息。包括它的速率、IP地址、子网掩码和最大传输单元。</p>
+<p>（8）获取路由信息，如目标地址、下一跳地址、子网掩码和路径长度值。结果如下所示：<br>
+<img src="00135.jpeg" width="85%" height="85%"></p>
+<p>以上信息表示目标系统的一个路由表信息。该路由表包括目的地址、下一跳地址、子网掩码及路径长度值。</p>
+<p>（9）获取网络服务信息，如分布式组件对象模型服务、DHCP客户端和DNS客户端等。结果如下所示：</p>
+<img src="00136.jpeg" width="85%" height="85%">
+<p>以上信息显示了目标主机中所安装的服务。由于篇幅的原因，只列出了一少部分服务。</p>
+<p>（10）获取监听的TCP端口，如监听的TCP端口号有135、495149513和139等。结果如下所示：</p>
+<img src="00137.jpeg" width="85%" height="85%">
+<p>以上信息表示两台主机建立TCP连接后的信息。包括本地地址、本机端口、远程主机地址、远程主机端口及连接状态。<br>
+（11）获取监听UDP端口信息，如监听的UDP端口有123、161、4500、500和5355等。结果如下所示：</p>
+<img src="00138.jpeg" width="85%" height="85%">
+<p>以上信息表示目标主机中已开启的UDP端口号。<br>
+（12）获取软件组件信息，如Visual C++ 2008。显示结果如下所示：</p>
+<img src="00139.jpeg" width="85%" height="85%">
+<p>以上信息表示该主机中安装了Visual C++ 2008类库。<br>
+（13）获取Web服务信息，如发送的字节数、文件数和当前匿名用户等。结果如下所示：</p>
+<img src="00140.jpeg" width="85%" height="85%">
+<p>以上信息显示了关于Web服务的信息。最后显示了枚举主机192.168.41.138共用的时间。</p>
+<h2 id="smtp枚举工具smtp-user-enum">SMTP枚举工具smtp-user-enum</h2>
+<p>smtp-user-enum是针对SMTP服务器的25端口，进行用户名枚举的工具，用以探测服务器已存在的邮箱账户。在SMTP服务上启动用户的SMTP枚举。执行命令如下所示：</p>
+<img src="00141.jpeg" width="85%" height="85%">
+<p>输出的信息显示了扫描192.168.41.138主机的详细信息，包括模式、运行进程、用户名文件、用户数和TCP端口等。</p>
+<h1 id="测试网络范围">测试网络范围</h1>
+<p>测试网络范围内的IP地址或域名也是渗透测试的一个重要部分。通过测试网络范围内的IP地址或域名，确定是否有人入侵自己的网络中并损害系统。不少单位选择仅对局部IP基础架构进行渗透测试，但从现在的安全形势来看，只有对整个IT基础架构进行测试才有意义。这是因为在通常情况下，黑客只要在一个领域找到漏洞，就可以利用这个漏洞攻击另外一个领域。在Kali中提供了DMitry和Scapy工具。其中，DMitry工具用来查询目标网络中IP地址或域名信息；Scapy工具用来扫描网络及嗅探数据包。本节将介绍使用DMitry和Scapy工具测试网络范围。</p>
+<h2 id="域名查询工具dmitry">域名查询工具DMitry</h2>
+<p>DMitry工具是用来查询IP或域名WHOIS信息的。WHOIS是用来查询域名是否已经被注册及已经注册域名的详细信息的数据库（如域名所有人和域名注册商）。使用该工具可以查到域名的注册商和过期时间等。下面将使用DMitry工具收集rzchina.net域名的信息。执行命令如下所示：</p>
+<img src="00142.jpeg" width="85%" height="85%">
+<p>输出的信息显示了rzchina.net域名的IP地址、WHOIS信息及开放的端口号等。执行以上命令后输出的信息很多，但是由于篇幅的原因，部分内容使用省略号（……）代替。</p>
+<p>虽然使用DMitry工具可以查看到IP或域名信息，但还是不能判断出这个网络范围。因为一般的路由器和防火墙等并不支持IP地址范围的方式，所以工作中经常要把IP地址转换成子网掩码的格式、CIDR格式和思科反向子网掩码格式等。在Linux中，netmask工具可以在IP范围、子网掩码、CIDR和Cisco等格式中互相转换，并且提供了IP地址的点分十进制、十六进制、八进制和二进制之间的互相转换。使用netmask工具将域名rzchina.net转换成标准的子网掩码格式。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># netmask -s rzchina.net</span></span><br><span class="line"> 180.178.45.123/255.255.255.255</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了rzchina.net域名的IP地址和子网掩码值。</p>
+<h2 id="跟踪路由工具scapy">跟踪路由工具Scapy</h2>
+<p>Scapy是一款强大的交互式数据包处理工具、数据包生成器、网络扫描器、网络发现工具和包嗅探工具。它提供多种类别的交互式生成数据包或数据包集合、对数据包进行操作、发送数据包、包嗅探、应答和反馈匹配等功能。下面将介绍Scapy工具的使用。<br>
+使用Scapy实现多行并行跟踪路由功能。具体操作步骤如下所示。</p>
+<p>（1）启动Scapy工具。执行命令如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># scapy</span></span><br><span class="line">INFO: Can<span class="string">'t import python gnuplot wrapper . Won'</span>t be able to plot.</span><br><span class="line">WARNING: No route found <span class="keyword">for</span> IPv6 destination :: (no default route?)</span><br><span class="line">Welcome to Scapy (2.2.0)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>看到&gt;&gt;&gt;提示符，表示scapy命令登录成功。<br>
+（2）使用sr()函数实现发送和接收数据包。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ans,unans=sr(IP(dst=<span class="string">"www.rzchina.net/30"</span>,ttl=(1,6))/TCP())</span><br><span class="line">Begin emission:</span><br><span class="line">.****Finished to send 24 packets.</span><br><span class="line">………***************…………………………………..^C <span class="comment">#Ctrl+C终止</span></span><br><span class="line">Received 70 packets, got 19 answers, remaining 5 packets</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，会自动与 <a href="http://www.rzchina.net" target="_blank" rel="noopener">www.rzchina.net</a> 建立连接。执行几分钟后，使用Ctrl+C终止接收数据包。从输出的信息中可以看到收到70个数据包，得到19个响应包及保留了5个包。</p>
+<p>（3）以表的形式查看数据包发送情况。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ans.make_table(lambda(s,r):(s.dst,s.ttl,r.src))</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，输出如下所示的信息：</p>
+<img src="00143.jpeg" width="85%" height="85%">
+<p>输出的信息显示了该网络中的所有IP地址。</p>
+<p>（4）使用scapy查看TCP路由跟踪信息。执行命令如下所示：</p>
+<img src="00144.jpeg" width="85%" height="85%">
+<p>输出的信息，显示了与 <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>、 <a href="http://www.kali.org" target="_blank" rel="noopener">www.kali.org</a>、 <a href="http://www.rzchina.net" target="_blank" rel="noopener">www.rzchina.net</a> 三个网站连接后所经过的地址。输出信息中的RA表示路由区，SA表示服务区。其中路由区是指当前系统中移动台当前的位置。RA（Routing Area）的标识符是RAI，RA是包含在LA内的。服务区是指移动台可获得服务的区域，即不同通信网用户无需知道移动台的实际位置，而可与之通信的区域。<br>
+（5）使用res.graph()函数以图的形式显示路由跟踪结果。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; res.graph()</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，将显示如图4.1所示的界面。</p>
+<img src="00145.jpeg" width="85%" height="85%">
+<p>图4.1 路由跟踪图<br>
+如果要想保存该图，执行如下所示的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; res.graph(target=<span class="string">"&gt;/tmp/graph.svg"</span>)</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，图4.1中的信息将会保存到/tmp/graph.svg文件中。此时不会有任何信息输出。</p>
+<p>（6）退出scapy程序，执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">exit</span>()</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，scapy程序将退出。还可以按下Ctrl+D组合键退出scapy程序。</p>
+<h1 id="识别活跃的主机">识别活跃的主机</h1>
+<p>尝试渗透测试之前，必须先识别在这个目标网络内活跃的主机。在一个目标网络内，最简单的方法将是执行ping命令。当然，它可能被一个主机拒绝，也可能被接收。本节将介绍使用Nmap工具识别活跃的主机。</p>
+<h2 id="网络映射器工具nmap">网络映射器工具Nmap</h2>
+<p>Nmap是一个免费开放的网络扫描和嗅探工具包，也叫网络映射器（Network Mapper）。该工具其基本功能有三个，一是探测一组主机是否在线；其次是扫描主机端口，嗅探所提供的网络服务；三是可以推断主机所用的操作系统。通常，用户利用Nmap来进行网络系统安全的评估，而黑客则用于扫描网络。例如，通过向远程主机发送探测数据包，获取主机的响应，并根据主机的端口开放情况得到网络的安全状态。从中寻找存在漏洞的目标主机，从而实施下一步的攻击。<br>
+Nmap使用TCP/IP协议栈指纹准确地判断目标主机的操作系统类型。首先，Nmap通过对目标主机进行端口扫描，找出有哪些端口正在目标主机上监听。当侦测到目标主机上有多于一个开放的TCP端口、一个关闭的TCP端口和一个关闭的UDP端口时，Nmap的探测能力是最好的。Nmap工具的工作原理如表4-1所示。<br>
+表4-1 Nmap工作原理</p>
+<table>
+<thead>
+<tr>
+<th>测试</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>发送TCP数据包（Flag=SYN）到开放的TCP端口上</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>发送一个空的TCP数据包到开放的TCP端口上</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>发送TCP数据包（Flag=SYN、URG、PSH和FIN）到开放的TCP端口上</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>发送TCP数据包（Flag=ACK）到开放的TCP端口上</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>发送TCP数据包（Flag=SYN）到关闭的TCP端口上</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>发送TCP数据包（Flag=ACK）到开放的TCP端口上</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>发送TCP数据包（Flag=URG、PSH和FIN）到关闭的TCP端口上</td>
+</tr>
+</tbody>
+</table>
+<p>Nmap对目标主机进行一系列测试，如表4-1所示。利用得出的测试结果建立相应目标主机的Nmap指纹。最后，将此Nmap指纹与指纹库中指纹进行查找匹配，从而得出目标主机的操作系统类型。<br>
+Nmap主要扫描类型如表4-2所示。<br>
+表4-2 Nmap主要扫描类型</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Ping扫描</th>
+<th style="text-align:left">端口扫描</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TCP SYN扫描</td>
+<td style="text-align:left">UDP扫描</td>
+</tr>
+<tr>
+<td style="text-align:left">操作系统识别</td>
+<td style="text-align:left">隐蔽扫描</td>
+</tr>
+</tbody>
+</table>
+<h2 id="使用nmap识别活跃主机">使用Nmap识别活跃主机</h2>
+<p>上一小节介绍了Nmap工具概念及功能。现在就使用该工具，测试一个网络中活跃的主机。使用方法如下所示。</p>
+<p>使用Nmap查看一个主机是否在线。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nmap -sP 192.168.41.136</span></span><br><span class="line">Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-21 17:54 CST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> www.benet.com (192.168.41.136)</span><br><span class="line">Host is up (0.00028s latency).</span><br><span class="line">MAC Address: 00:0C:29:31:02:17 (VMware)</span><br><span class="line">Nmap <span class="keyword">done</span>: 1 IP address (1 host up) scanned <span class="keyword">in</span> 0.19 seconds</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中可以看到192.168.41.136主机的域名、主机在线和MAC地址等。</p>
+<p>用户也可以使用Nping（Nmap套具）查看，能够获取更多详细信息。执行命令如下 所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nping --echo-client "public" echo.nmap.org</span></span><br><span class="line">Starting Nping 0.6.40 ( http://nmap.org/nping ) at 2014-04-21 17:53 CST</span><br><span class="line">SENT (1.6030s) ICMP [192.168.41.234 &gt; 74.207.244.221 Echo request (<span class="built_in">type</span>=8/code=0) id=45896 seq=1] IP [ttl=64 id=1270 iplen=28 ]</span><br><span class="line">RCVD (1.7971s) ICMP [74.207.244.221 &gt; 192.168.41.234 Echo reply (<span class="built_in">type</span>=0/code=0) id=45896 seq=1] IP [ttl=128 id=64157 iplen=28 ]</span><br><span class="line">SENT (2.6047s) ICMP [192.168.41.234 &gt; 74.207.244.221 Echo request (<span class="built_in">type</span>=8/code=0) id=45896 seq=2] IP [ttl=64 id=1270 iplen=28 ]</span><br><span class="line">RCVD (2.6149s) ICMP [74.207.244.221 &gt; 192.168.41.234 Echo reply (<span class="built_in">type</span>=0/code=0) id=45896 seq=1] IP [ttl=128 id=64159 iplen=28 ]</span><br><span class="line">SENT (3.6289s) ICMP [192.168.41.234 &gt; 74.207.244.221 Echo request (<span class="built_in">type</span>=8/code=0) id=45896 seq=3] IP [ttl=64 id=1270 iplen=28 ]</span><br><span class="line">RCVD (3.6322s) ICMP [74.207.244.221 &gt; 192.168.41.234 Echo reply (<span class="built_in">type</span>=0/code=0) id=45896 seq=1] IP [ttl=128 id=64161 iplen=28 ]</span><br><span class="line">SENT (4.6429s) ICMP [192.168.41.234 &gt; 74.207.244.221 Echo request (<span class="built_in">type</span>=8/code=0) id=45896 seq=4] IP [ttl=64 id=1270 iplen=28 ]</span><br><span class="line">RCVD (4.6435s) ICMP [74.207.244.221 &gt; 192.168.41.234 Echo reply (<span class="built_in">type</span>=0/code=0) id=45896 seq=1] IP [ttl=128 id=64163 iplen=28 ]</span><br><span class="line">SENT (5.6454s) ICMP [192.168.41.234 &gt; 74.207.244.221 Echo request (<span class="built_in">type</span>=8/code=0) id=45896 seq=5] IP [ttl=64 id=1270 iplen=28 ]</span><br><span class="line">RCVD (5.6455s) ICMP [74.207.244.221 &gt; 192.168.41.234 Echo reply (<span class="built_in">type</span>=0/code=0) id=45896 seq=1] IP [ttl=128 id=64164 iplen=28 ]</span><br><span class="line">Max rtt: 193.736ms | Min rtt: 0.042ms | Avg rtt: 70.512ms</span><br><span class="line">Raw packets sent: 5 (140B) | Rcvd: 11 (506B) | Lost: 0 (0.00%)| Echoed: 0 (0B)</span><br><span class="line">Nping <span class="keyword">done</span>: 1 IP address pinged <span class="keyword">in</span> 6.72 seconds</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了与echo.nmap.org网站连接时数据的发送情况，如发送数据包的时间、接收时间、TTL值和往返时间等。</p>
+<p>用户也可以发送一些十六进制数据到指定的端口，如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nping -tcp -p 445 -data AF56A43D 192.168.41.136</span></span><br><span class="line">Starting Nping 0.6.40 ( http://nmap.org/nping ) at 2014-04-21 17:58 CST</span><br><span class="line">SENT (0.0605s) TCP 192.168.41.234:14647 &gt; 192.168.41.136:445 S ttl=64 id=54933 iplen=44 seq=3255055782 win=1480</span><br><span class="line">RCVD (0.0610s) TCP 192.168.41.136:445 &gt; 192.168.41.234:14647 RA ttl=64 id=0 iplen=40 seq=0 win=0</span><br><span class="line">SENT (1.0617s) TCP 192.168.41.234:14647 &gt; 192.168.41.136:445 S ttl=64 id=54933 iplen=44 seq=3255055782 win=1480</span><br><span class="line">RCVD (1.0620s) TCP 192.168.41.136:445 &gt; 192.168.41.234:14647 RA ttl=64 id=0 iplen=40 seq=0 win=0</span><br><span class="line">SENT (2.0642s) TCP 192.168.41.234:14647 &gt; 192.168.41.136:445 S ttl=64 id=54933 iplen=44 seq=3255055782 win=1480</span><br><span class="line">RCVD (2.0645s) TCP 192.168.41.136:445 &gt; 192.168.41.234:14647 RA ttl=64 id=0 iplen=40 seq=0 win=0</span><br><span class="line">SENT (3.0667s) TCP 192.168.41.234:14647 &gt; 192.168.41.136:445 S ttl=64 id=54933 iplen=44 seq=3255055782 win=1480</span><br><span class="line">RCVD (3.0675s) TCP 192.168.41.136:445 &gt; 192.168.41.234:14647 RA ttl=64 id=0 iplen=40 seq=0 win=0</span><br><span class="line">SENT (4.0683s) TCP 192.168.41.234:14647 &gt; 192.168.41.136:445 S ttl=64 id=54933 iplen=44 seq=3255055782 win=1480</span><br><span class="line">RCVD (4.0685s) TCP 192.168.41.136:445 &gt; 192.168.41.234:14647 RA ttl=64 id=0 iplen=40 seq=0 win=0</span><br><span class="line">Max rtt: 0.334ms | Min rtt: 0.136ms | Avg rtt: 0.217ms</span><br><span class="line">Raw packets sent: 5 (220B) | Rcvd: 5 (230B) | Lost: 0 (0.00%)</span><br><span class="line">Nping <span class="keyword">done</span>: 1 IP address pinged <span class="keyword">in</span> 4.13 seconds</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了192.168.41.234与目标系统192.168.41.136之间TCP传输过程。通过发送数据包到指定端口模拟出一些常见的网络层攻击，以验证目标系统对这些测试的防御情况。</p>
+<h1 id="查看打开的端口">查看打开的端口</h1>
+<p>对一个大范围的网络或活跃的主机进行渗透测试，必须要了解这些主机上所打开的端口号。在Kali Linux中默认提供了Nmap和Zenmap两个扫描端口工具。为了访问目标系统中打开的TCP和UDP端口，本节将介绍Nmap和Zenmap工具的使用。</p>
+<h2 id="tcp端口扫描工具nmap">TCP端口扫描工具Nmap</h2>
+<p>使用Nmap工具查看目标主机192.168.41.136上开放的端口号。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nmap 192.168.41.136</span></span><br><span class="line">Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-19 16:21 CST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> www.benet.com (192.168.41.136)</span><br><span class="line">Host is up (0.00022s latency).</span><br><span class="line">Not shown: 996 closed ports</span><br><span class="line">PORT     STATE  SERVICE</span><br><span class="line">21/tcp    open   ftp</span><br><span class="line">22/tcp    open   ssh</span><br><span class="line">23/tcp    open   telnet</span><br><span class="line">25/tcp    opne   smtp</span><br><span class="line">53/tcp    open   domain</span><br><span class="line">80/tcp    open   http</span><br><span class="line">111/tcp   open   rpcbind</span><br><span class="line">139/tcp   open   netbios-ssn</span><br><span class="line">445/tcp   open   microsoft-ds</span><br><span class="line">512/tcp   open   <span class="built_in">exec</span></span><br><span class="line">513/tcp   open   login</span><br><span class="line">514/tcp   open   shell</span><br><span class="line">1099/tcp  open   rmiregistry</span><br><span class="line">1524/tcp  open   ingreslock</span><br><span class="line">2049/tcp  open   nfs</span><br><span class="line">2121/tcp  open   ccproxy-ftp</span><br><span class="line">3306/tcp  open   mysql</span><br><span class="line">5432/tcp  open   postgresql</span><br><span class="line">5900/tcp  open   vnc</span><br><span class="line">6000/tcp  open   X11</span><br><span class="line">6667/tcp  open   irc</span><br><span class="line">8009/tcp  open   ajp13</span><br><span class="line">8180/tcp  open   unknown</span><br><span class="line">MAC Address: 00:0C:29:31:02:17 (VMware)</span><br><span class="line">Nmap <span class="keyword">done</span>: 1 IP address (1 host up) scanned <span class="keyword">in</span> 0.28 seconds</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了主机192.168.41.136上开放的所有端口，如22、53、80和111等。</p>
+<ol>
+<li>指定扫描端口范围<br>
+如果目标主机上打开的端口较多时，用户查看起来可能有点困难。这时候用户可以使用Nmap指定扫描的端口范围，如指定扫描端口号在1～1000之间的端口号，执行命令如下所示：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nmap -p 1-1000 192.168.41.136</span></span><br><span class="line">Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-19 16:27 CST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> www.benet.com (192.168.41.136)</span><br><span class="line">Host is up (0.00020s latency).</span><br><span class="line">Not shown: 49 closed ports</span><br><span class="line">PORT        STATE   SERVICE</span><br><span class="line">21/tcp      open      ftp</span><br><span class="line">22/tcp      open      ssh</span><br><span class="line">23/tcp      open      telnet</span><br><span class="line">25/tcp      opne      smtp</span><br><span class="line">53/tcp      open      domain</span><br><span class="line">80/tcp      open      http</span><br><span class="line">111/tcp     open      rpcbind</span><br><span class="line">139/tcp     open      netbios-ssn</span><br><span class="line">445/tcp     open      microsoft-ds</span><br><span class="line">512/tcp     open      <span class="built_in">exec</span></span><br><span class="line">513/tcp     open      login</span><br><span class="line">514/tcp     open      shell</span><br><span class="line">MAC Address: 00:0C:29:31:02:17 (VMware)</span><br><span class="line">Nmap <span class="keyword">done</span>: 1 IP address (1 host up) scanned <span class="keyword">in</span> 0.35 seconds</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了主机192.168.41.136上端口在1～1000之间所开放的端口号。</p>
+<p>2.扫描特定端口</p>
+<p>Nmap工具还可以指定一个特定端口号来扫描。<br>
+【实例4-2】使用Nmap工具指定扫描在192.168.41.* 网段内所有开启TCP端口22的主机。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nmap -p 22 192.168.41.*</span></span><br><span class="line"></span><br><span class="line">Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-21 09:44 CST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> 192.168.41.1</span><br><span class="line">Host is up (0.00029s latency).</span><br><span class="line">PORT  STATE SERVICE</span><br><span class="line">22/tcp closed ssh</span><br><span class="line">MAC Address: 00:50:56:C0:00:08 (VMware)</span><br><span class="line"></span><br><span class="line">Nmap scan report <span class="keyword">for</span> 192.168.41.2</span><br><span class="line">Host is up (0.00032s latency).</span><br><span class="line">PORT  STATE SERVICE</span><br><span class="line">22/tcp closed ssh</span><br><span class="line">MAC Address: 00:50:56:E9:AF:47 (VMware)</span><br><span class="line"></span><br><span class="line">Nmap scan report <span class="keyword">for</span> www.benet.com (192.168.41.136)</span><br><span class="line">Host is up (0.00056s latency).</span><br><span class="line">PORT  STATE SERVICE</span><br><span class="line">22/tcp open ssh</span><br><span class="line">MAC Address: 00:0C:29:31:02:17 (VMware)</span><br><span class="line"></span><br><span class="line">Nmap scan report <span class="keyword">for</span> 192.168.41.254</span><br><span class="line">Host is up (0.00027s latency).</span><br><span class="line">PORT  STATE  SERVICE</span><br><span class="line">22/tcp filtered ssh</span><br><span class="line">MAC Address: 00:50:56:E1:5E:75 (VMware)</span><br><span class="line"></span><br><span class="line">Nmap scan report <span class="keyword">for</span> 192.168.41.234</span><br><span class="line">Host is up (0.000052s latency).</span><br><span class="line">PORT  STATE SERVICE</span><br><span class="line">22/tcp open ssh</span><br><span class="line"></span><br><span class="line">Nmap <span class="keyword">done</span>: 256 IP addresses (5 hosts up) scanned <span class="keyword">in</span> 2.81 seconds</span><br></pre></td></tr></table></figure>
+<p>输出的结果显示了192.168.41.* 网段内所有开启22端口的主机信息。从输出的信息中可以看到，总共有五台主机上打开了22号端口。</p>
+<p>使用Nmap工具还可以指定扫描端口22结果的输出格式。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nmap -p 22 192.168.41.* -oG /tmp/nmap-targethost-tcp445.txt</span></span><br></pre></td></tr></table></figure>
+<p>执行以上命令后输出的信息与第三步中输出的结果类似，这里就不再列举。但是执行该命令后，Nmap会将输出的信息保存到/tmp/ nmap-targethost-tcp445.txt文件中。</p>
+<h2 id="图形化tcp端口扫描工具zenmap">图形化TCP端口扫描工具Zenmap</h2>
+<p>Zenmap是Nmap官方推出的一款基于Nmap的安全扫描图形用户界面。它的设计目标是快速地扫描大型网络，当然也可以使用它扫描单个主机。下面将介绍Zenmap工具的使用。</p>
+<p>启动Zenmap工具。在Kali图形界面依次选择“应用程序” |Kali Linux| “信息收集” | “DNS分析” | Zenmap命令，将打开如图4.2所示的界面。</p>
+<img src="00146.jpeg" width="85%" height="85%">
+<p>图4.2 Zenmap起始界面</p>
+<p>在该界面Target文本框中输入目标主机地址，在Profile文本框中选择扫描类型。设置完后，单击Scan按钮，扫描结果如图4.3所示。</p>
+<img src="00147.jpeg" width="85%" height="85%">
+<p>图4.3 扫描界面<br>
+该界面显示了扫描192.168.41.* 网段内所有主机启动的所有端口信息。在左侧栏中可以切换以主机或服务的形式分别显示详细扫描结果。在右侧栏中，可以分别查看Namp输出信息、端口/主机、拓扑结构、主机详细信息和扫描信息等。</p>
+<h1 id="系统指纹识别">系统指纹识别</h1>
+<p>现在一些便携式计算机操作系统使用指纹识别来验证密码进行登录。指纹识别是识别系统的一个典型模式，包括指纹图像获取、处理、特征提取和对等模块。如果要做渗透测试，需要了解要渗透测试的操作系统的类型才可以。本节将介绍使用Nmap工具测试正在运行的主机的操作系统。</p>
+<h2 id="使用nmap工具识别系统指纹信息">使用Nmap工具识别系统指纹信息</h2>
+<p>使用Nmap命令的-O选项启用操作系统测试功能。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># nmap -O 192.168.41.136</span></span><br><span class="line">Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-19 19:20 CST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> www.benet.com (192.168.41.136)</span><br><span class="line">Host is up (0.00045s latency).</span><br><span class="line">Not shown: 996 closed ports</span><br><span class="line">PORT     STATE SERVICE</span><br><span class="line">22/tcp  open ssh</span><br><span class="line">53/tcp  open domain</span><br><span class="line">80/tcp  open http</span><br><span class="line">111/tcp open rpcbind</span><br><span class="line">MAC Address: 00:0C:29:31:02:17 (VMware)  //MAC地址</span><br><span class="line">Device <span class="built_in">type</span>: general purpose</span><br><span class="line">Running: Linux 2.6.X|3.X</span><br><span class="line">OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3  //操作系统类型</span><br><span class="line">OS details: Linux 2.6.32 - 3.9</span><br><span class="line">Network Distance: 1 hop</span><br><span class="line"></span><br><span class="line">OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .</span><br><span class="line">Nmap <span class="keyword">done</span>: 1 IP address (1 host up) scanned <span class="keyword">in</span> 2.18 seconds</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了主机192.168.41.136的指纹信息，包括目标主机打开的端口、MAC地址、操作系统类型和内核版本等。</p>
+<h2 id="指纹识别工具p0f">指纹识别工具p0f</h2>
+<p>p0f是一款百分之百的被动指纹识别工具。该工具通过分析目标主机发出的数据包，对主机上的操作系统进行鉴别，即使是在系统上装有性能良好的防火墙也没有问题。p0f主要识别的信息如下：</p>
+<ul>
+<li>操作系统类型；</li>
+<li>端口；</li>
+<li>是否运行于防火墙之后；</li>
+<li>是否运行于NAT模式；</li>
+<li>是否运行于负载均衡模式；</li>
+<li>远程系统已启动时间；</li>
+<li>远程系统的DSL和ISP信息等。</li>
+</ul>
+<p>使用p0f分析Wireshark捕获的一个文件。执行命令如下所示：</p>
+<img src="00148.jpeg" width="85%" height="85%">
+<img src="00149.jpeg" width="85%" height="85%">
+<p>输出的信息是p0f分析targethost.pcap包的一个结果。该信息中显示了客户端与服务器的详细信息，包括操作系统类型、地址、以太网模式、运行的服务器和端口号等。</p>
+<p>注意：p0f命令的v2和v3版中所使用的选项有很大的差别。例如，在p0fv2版本中，指定文件使用的选项是-s，但是在v3版本中是-r。本书中使用的p0f版本是v3。</p>
+<h1 id="服务的指纹识别">服务的指纹识别</h1>
+<p>为了确保有一个成功的渗透测试，必须需要知道目标系统中服务的指纹信息。服务指纹信息包括服务端口、服务名和版本等。在Kali中，可以使用Nmap和Amap工具识别指纹信息。本节将介绍使用Nmap和Amap工具的使用。</p>
+<h2 id="使用nmap工具识别服务指纹信息">使用Nmap工具识别服务指纹信息</h2>
+<p>使用Nmap工具查看192.168.41.136服务上正在运行的端口。执行命令如下所示：</p>
+<img src="00151.jpeg" width="85%" height="85%">
+<p>从输出的信息中可以查看到目标服务器上运行的端口号有21、22、53、80和111。同时，还获取各个端口对应的服务及版本信息。</p>
+<h2 id="服务枚举工具amap">服务枚举工具Amap</h2>
+<p>Amap是一个服务枚举工具。使用该工具能识别正运行在一个指定端口或一个范围端口上的应用程序。下面使用Amap工具在指定的50～100端口范围内，测试目标主机192.168.41.136上正在运行的应用程序。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># amap -bq 192.168.41.136 50-100</span></span><br><span class="line">amap v5.4 (www.thc.org/thc-amap) started at 2014-04-21 11:20:36 - APPLICATION MAPPING mode</span><br><span class="line">Protocol on 192.168.41.136:80/tcp matches http - banner: &lt;!DOCTYPE HTML PUBLIC <span class="string">"-//IETF//DTD HTML 2.0//EN"</span>&gt;\n&lt;html&gt;&lt;head&gt;\n&lt;title&gt;501 Method Not Implemented&lt;/title&gt;\n&lt;/head&gt;&lt;body&gt;\n&lt;h1&gt;Method Not Implemented&lt;/h1&gt;\n&lt;p&gt; to / not supported.&lt;br /&gt;\n&lt;/p&gt;\n&lt;hr&gt;\n&lt;address&gt;Apache/2.2.15 (Red Hat) Server at www.benet.c</span><br><span class="line">Protocol on 192.168.41.136:80/tcp matches http-apache-2 - banner: &lt;!DOCTYPE HTML PUBLIC <span class="string">"-//IETF//DTD HTML 2.0//EN"</span>&gt;\n&lt;html&gt;&lt;head&gt;\n&lt;title&gt;501 Method Not Implemented&lt;/title&gt;\n&lt;/head&gt;&lt;body&gt;\n&lt;h1&gt;Method Not Implemented&lt;/h1&gt;\n&lt;p&gt; to / not supported.&lt;br /&gt;\n&lt;/p&gt;\n&lt;hr&gt;\n&lt;address&gt;Apache/2.2.15 (Red Hat) Server at www.benet.c</span><br><span class="line">Protocol on 192.168.41.136:53/tcp matches dns - banner: \f</span><br><span class="line">amap v5.4 finished at 2014-04-21 11:20:48</span><br></pre></td></tr></table></figure>
+<p>输出的信息显示了192.168.41.136主机在50～100端口范围内正在运行的端口。从输出结果的第二段内容中可以了解到主机192.168.41.136使用的是Red Hat操作系统，并且正在运行着版本为2.2.15的Apache服务器，其开放的端口是80。从倒数第二行信息中可以看到该主机还运行了DNS服务器，其开放的端口是53。</p>
+<h1 id="其他信息收集手段">其他信息收集手段</h1>
+<p>面介绍了使用不同的工具以操作步骤的形式进行了信息收集。在Kali中还可以使用一些常规的或非常规方法来收集信息，如使用Recon-NG框架、Netdiscover工具和Shodan工具等。本节将介绍使用这些方法，实现信息收集。</p>
+<h2 id="recon-ng框架">Recon-NG框架</h2>
+<p>Recon-NG是由Python编写的一个开源的Web侦查（信息收集）框架。Recon-NG框架是一个强大的工具，使用它可以自动的收集信息和网络侦查。下面将介绍使用Recon-NG侦查工具。</p>
+<p>启动Recon-NG框架。执行命令如下所示：</p>
+<img src="00152.jpeg" width="85%" height="85%">
+<p>以上输出信息显示了Recon-NG框架的基本信息。例如，在Recon-NG框架下，包括56个侦查模块、5个报告模块、2个渗透攻击模块、2个发现模块和1个导入模块。看到[recon-ng][default]&gt;提示符，表示成功登录Recon-NG框架。现在，就可以在[recon-ng][default] &gt;提示符后面执行各种操作命令了。</p>
+<p>首次使用Recon-NG框架之前，可以使用help命令查看所有可执行的命令。如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default] &gt; <span class="built_in">help</span></span><br><span class="line">Commands (<span class="built_in">type</span> [<span class="built_in">help</span>|?] &lt;topic&gt;):</span><br><span class="line">---------------------------------</span><br><span class="line">add          Adds records to the database</span><br><span class="line">back         Exits current prompt level</span><br><span class="line">del          Deletes records from the database</span><br><span class="line"><span class="built_in">exit</span>         Exits current prompt level</span><br><span class="line"><span class="built_in">help</span>         Displays this menu</span><br><span class="line">keys         Manages framework API keys</span><br><span class="line">load         Loads specified module</span><br><span class="line">pdb          Starts a Python Debugger session</span><br><span class="line">query        Queries the database</span><br><span class="line">record       Records commands to a resource file</span><br><span class="line">reload       Reloads all modules</span><br><span class="line">resource     Executes commands from a resource file</span><br><span class="line">search       Searches available modules</span><br><span class="line"><span class="built_in">set</span>          Sets module options</span><br><span class="line">shell        Executes shell commands</span><br><span class="line">show         Shows various framework items</span><br><span class="line">spool        Spools output to a file</span><br><span class="line"><span class="built_in">unset</span>        Unsets module options</span><br><span class="line">use          Loads specified module</span><br><span class="line">workspaces   Manages workspaces</span><br></pre></td></tr></table></figure>
+<p>以上输出信息显示了在Recon-NG框架中可运行的命令。该框架和Metasploit框架类似，同样也支持很多模块。此时，可以使用show modules命令查看所有有效的模块列表。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default] &gt; show modules</span><br><span class="line"> Discovery</span><br><span class="line"> ---------</span><br><span class="line">  discovery/info_disclosure/cache_snoop</span><br><span class="line">  discovery/info_disclosure/interesting_files</span><br><span class="line"> Exploitation</span><br><span class="line"> ------------</span><br><span class="line">  exploitation/injection/command_injector</span><br><span class="line">  exploitation/injection/xpath_bruter</span><br><span class="line"> Import</span><br><span class="line"> ------</span><br><span class="line">  import/csv_file</span><br><span class="line"> Recon</span><br><span class="line"> -----</span><br><span class="line">  recon/companies-contacts/facebook</span><br><span class="line">  recon/companies-contacts/jigsaw</span><br><span class="line">  recon/companies-contacts/jigsaw/point_usage</span><br><span class="line">  recon/companies-contacts/jigsaw/purchase_contact</span><br><span class="line">  recon/companies-contacts/jigsaw/search_contacts</span><br><span class="line">  recon/companies-contacts/linkedin_auth</span><br><span class="line">  recon/contacts-contacts/mangle</span><br><span class="line">  recon/contacts-contacts/namechk</span><br><span class="line">  recon/contacts-contacts/rapportive</span><br><span class="line">  recon/contacts-creds/haveibeenpwned</span><br><span class="line">……</span><br><span class="line">  recon/hosts-hosts/bing_ip</span><br><span class="line">  recon/hosts-hosts/ip_neighbor</span><br><span class="line">  recon/hosts-hosts/ipinfodb</span><br><span class="line">  recon/hosts-hosts/resolve</span><br><span class="line">  recon/hosts-hosts/reverse_resolve</span><br><span class="line">  recon/locations-locations/geocode</span><br><span class="line">  recon/locations-locations/reverse_geocode</span><br><span class="line">  recon/locations-pushpins/flickr</span><br><span class="line">  recon/locations-pushpins/picasa</span><br><span class="line">  recon/locations-pushpins/shodan</span><br><span class="line">  recon/locations-pushpins/twitter</span><br><span class="line">  recon/locations-pushpins/youtube</span><br><span class="line">  recon/netblocks-hosts/reverse_resolve</span><br><span class="line">  recon/netblocks-hosts/shodan_net</span><br><span class="line">  recon/netblocks-ports/census_2012</span><br><span class="line"> Reporting</span><br><span class="line"> ---------</span><br><span class="line">  reporting/csv</span><br><span class="line">  reporting/html</span><br><span class="line">  reporting/list</span><br><span class="line">  reporting/pushpin</span><br><span class="line">  reporting/xml</span><br><span class="line"> [recon-ng][default] &gt;</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中，可以看到显示了五部分。每部分包括的模块数，在启动Recon-NG框架后可以看到。用户可以使用不同的模块进行各种的信息收集。下面以例子的形式介绍使用Recon-NG中的模块进行信息收集。<br>
+【实例4-3】使用recon/domains-hosts/baidu_site模块，枚举baidu网站的子域。具体操作步骤如下所示。<br>
+（1）使用recon/domains-hosts/baidu_site模块。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default] &gt; use recon/domains-hosts/baidu_site</span><br></pre></td></tr></table></figure>
+<p>（2）查看该模块下可配置选项参数。执行命令如下所示：</p>
+<img src="00153.jpeg" width="85%" height="85%">
+<p>从输出的信息中，可以看到有一个选项需要配置。<br>
+（3）配置SOURCE选项参数。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default][baidu_site] &gt; <span class="built_in">set</span> SOURCE baidu.com</span><br><span class="line">SOURCE =&gt; baidu.com</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中，<a href="http://xn--SOURCEbaidu-m68qi3eh5sq1flua257kng2ao53ekq6aozciv2hcwufj0c.com" target="_blank" rel="noopener">可以看到SOURCE选项参数已经设置为baidu.com</a>。<br>
+（4）启动信息收集。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default][baidu_site] &gt; run</span><br><span class="line">---------</span><br><span class="line">BAIDU.COM</span><br><span class="line">---------</span><br><span class="line">[*] URL: http://www.baidu.com/s?pn=0&amp;wd=site%3Abaidu.com</span><br><span class="line">[*] map.baidu.com</span><br><span class="line">[*] 123.baidu.com</span><br><span class="line">[*] jingyan.baidu.com</span><br><span class="line">[*] top.baidu.com</span><br><span class="line">[*] www.baidu.com</span><br><span class="line">[*] hi.baidu.com</span><br><span class="line">[*] video.baidu.com</span><br><span class="line">[*] pan.baidu.com</span><br><span class="line">[*] zhidao.baidu.com</span><br><span class="line">[*] Sleeping to avoid lockout…</span><br><span class="line">-------</span><br><span class="line">SUMMARY</span><br><span class="line">-------</span><br><span class="line">[*] 9 total (2 new) items found.</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中，可以看到找到了9个子域。枚举到的所有数据将被连接到Recon-NG放置的数据库中。这时候，用户可以创建一个报告查看被连接的数据。<br>
+【实例4-4】查看获取的数据。具体操作步骤如下所示。</p>
+<p>（1）选择reporting/csv模块，执行命令如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default] &gt; use reporting/csv</span><br></pre></td></tr></table></figure>
+<p>（2）生成报告。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[recon-ng][default][csv] &gt; run</span><br><span class="line">[*] 9 records added to <span class="string">'/root/.recon-ng/workspaces/default/results.csv'</span>.</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中可以看到，枚举到的9个记录已被添加到/root/.recon-ng /workspaces/default/results.csv文件中。打开该文件，如图4.4所示。</p>
+<img src="00154.jpeg" width="85%" height="85%">
+<p>图4.4 results.csv文件<br>
+（3）从该界面可以看到，枚举到的所有子域。<br>
+用户也可以使用Dmitry命令，查询关于网站的信息。下面将介绍Dmitry命令的使用。</p>
+<p>查看Dmitry命令的帮助信息。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dmitry -h</span></span><br><span class="line">Deepmagic Information Gathering Tool</span><br><span class="line"><span class="string">"There be some deep magic going on"</span></span><br><span class="line">dmitry: invalid option -- <span class="string">'h'</span></span><br><span class="line">Usage: dmitry [-winsepfb] [-t 0-9] [-o %host.txt] host</span><br><span class="line"> -o Save output to %host.txt or to file specified by -o file</span><br><span class="line"> -i  Perform a whois lookup on the IP address of a host</span><br><span class="line"> -w Perform a whois lookup on the domain name of a host</span><br><span class="line"> -n Retrieve Netcraft.com information on a host</span><br><span class="line"> -s Perform a search <span class="keyword">for</span> possible subdomains</span><br><span class="line"> -e Perform a search <span class="keyword">for</span> possible email addresses</span><br><span class="line"> -p Perform a TCP port scan on a host</span><br><span class="line">* -f Perform a TCP port scan on a host showing output reporting filtered ports</span><br><span class="line">* -b Read <span class="keyword">in</span> the banner received from the scanned port</span><br><span class="line">* -t 0-9 Set the TTL <span class="keyword">in</span> seconds when scanning a TCP port ( Default 2 )</span><br><span class="line">*Requires the -p flagged to be passed</span><br></pre></td></tr></table></figure>
+<p>以上信息显示了dmitry命令的语法格式和所有可用参数。下面使用dmitry命令的-s选项，查询合理的子域。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dmitry -s google.com</span></span><br><span class="line">Deepmagic Information Gathering Tool</span><br><span class="line"><span class="string">"There be some deep magic going on"</span></span><br><span class="line">HostIP:173.194.127.71</span><br><span class="line">HostName:google.com</span><br><span class="line">Gathered Subdomain information <span class="keyword">for</span> google.com</span><br><span class="line">---------------------------------</span><br><span class="line">Searching Google.com:80…</span><br><span class="line">HostName:www.google.com</span><br><span class="line">HostIP:173.194.127.51</span><br><span class="line">Searching Altavista.com:80…</span><br><span class="line">Found 1 possible subdomain(s) <span class="keyword">for</span> host google.com, Searched 0 pages containing 0 results</span><br><span class="line">All scans completed, exiting</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中，可以看到搜索到了一个子域。该子域名为 <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>， IP地址为173.194.127.51。该命令默认是从google.com网站搜索，如果不能连接google.com网站的话，执行以上命令将会出现Unable to connect: Socket Connect Error错误信息。</p>
+<h2 id="arp侦查工具netdiscover">ARP侦查工具Netdiscover</h2>
+<p>Netdiscover是一个主动/被动的ARP侦查工具。该工具在不使用DHCP的无线网络上非常有用。使用Netdiscover工具可以在网络上扫描IP地址，检查在线主机或搜索为它们发送的ARP请求。下面将介绍Netdiscover工具的使用方法。<br>
+Netdiscover命令的语法格式如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netdiscover [-i device] [-r range | -l file | -p] [-s time] [-n node] [-c count] [-f] [-d] [-S] [-P] [-C]</span><br></pre></td></tr></table></figure>
+<p>以上语法中，各选项参数含义如下所示。</p>
+<ul>
+<li>-i device：指定网络设备接口。</li>
+<li>-r range：指定扫描网络范围。</li>
+<li>-l file：指定扫描范围列表文件。</li>
+<li>-p：使用被动模式，不发送任何数据。</li>
+<li>-s time：每个ARP请求之间的睡眠时间。</li>
+<li>-n node：使用八字节的形式扫描。</li>
+<li>-c count：发送ARP请求的时间次数。</li>
+<li>-f：使用主动模式。</li>
+<li>-d：忽略配置文件。</li>
+<li>-S：启用每个ARP请求之间抑制的睡眠时间。</li>
+<li>-P：打印结果。</li>
+<li>-L：将捕获信息输出，并继续进行扫描。<br>
+【实例4-5】使用Netdiscover工具攻击扫描局域网中所有的主机。执行命令如下所示：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># netdiscover</span></span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，将显示如下所示的信息：</p>
+<img src="00155.jpeg" width="85%" height="85%">
+<p>从输出的信息中，可以看到扫描到了三台主机。其IP地址分别为192.168.6.102、192.168.6.1和192.168.6.110。</p>
+<h2 id="搜索引擎工具shodan">搜索引擎工具Shodan</h2>
+<p>Shodan是互联网上最强大的一个搜索引擎工具。该工具不是在网上搜索网址，而是直接搜索服务器。Shodan可以说是一款“黑暗”谷歌，一直不停的在寻找着所有和互联网连接的服务器、摄像头、打印机和路由器等。每个月都会在大约5亿个服务器上日夜不停的搜集信息。下面将介绍Shodan工具的使用。</p>
+<p>Shodan的官网网址是 <a href="http://www.shodanhq.com" target="_blank" rel="noopener">www.shodanhq.com</a>。 打开该网址界面，如图4.5所示。<br>
+<img src="00156.jpeg" width="85%" height="85%"></p>
+<p>图4.5 Shodan官网<br>
+如果要搜索一些东西时，在Shodan对应的文本框中输入搜索的内容。然后，单击Search按钮开始搜索。例如，用户想要搜索思科路由器，则在搜索框中输入Cisco，并单击Search按钮。搜索到结果后，显示界面如图4.6所示。</p>
+<img src="00157.jpeg" width="85%" height="85%">
+<p>图4.6 搜索结果<br>
+从该界面可以看到搜索到全球三百多万的Cisco路由器。在该界面用户可以单击任何IP地址，直接找到该设备。<br>
+在使用Shodan搜索引擎中，可以使用过滤器通过缩小搜索范围快速的查询需要的东西。如查找运行在美国IIS 8.0的所有IIS服务，可以使用以下搜索方法，如图4.7所示。</p>
+<img src="00158.jpeg" width="85%" height="85%">
+<p>图4.7 搜索的IIS服务<br>
+在该界面显示了搜索到的一个IIS 8.0服务器。从搜索到的设备中，可以看到关于该服务器的标题信息、所在的国家、主机名和文本信息。<br>
+在Shodan搜索时，需要注意一些过滤器命令的语法。常见的几种情况如下所示。</p>
+<ol>
+<li>City和Country命令<br>
+使用City和Country命令可以缩小搜索的地理位置。如下所示。</li>
+</ol>
+<ul>
+<li>country:US表示从美国进行搜索。</li>
+<li>city:Memphis表示从孟斐斯城市搜索。<br>
+City和Country命令也可以结合使用。如下所示。</li>
+<li>country:US city:Memphis。</li>
+</ul>
+<ol start="2">
+<li>HOSTNAME命令<br>
+HOSTNAME命令通过指定主机名来扫描整个域名。</li>
+</ol>
+<ul>
+<li>hostname:google表示搜索google主机。</li>
+</ul>
+<ol start="3">
+<li>NET命令<br>
+使用NET命令扫描单个IP或一个网络范围。如下所示。</li>
+</ol>
+<ul>
+<li>net:192.168.1.10：扫描主机192.168.1.10。</li>
+<li>net:192.168.1.0/24：扫描192.168.1.0/24网络内所有主机。</li>
+</ul>
+<ol start="4">
+<li>Title命令<br>
+使用Title命令可以搜索项目。如下所示。</li>
+</ol>
+<ul>
+<li>title:“Server Room”表示搜索服务器机房信息。</li>
+</ul>
+<ol start="5">
+<li>关键字搜索<br>
+Shodan使用一个关键字搜索是最受欢迎的方式。如果知道目标系统使用的服务器类型或嵌入式服务器名，来搜索一个Web页面是很容易的。如下所示。</li>
+</ol>
+<ul>
+<li>apache/2.2.8 200 ok：表示搜索所有Apache服务正在运行的2.2.8版本，并且仅搜索打开的站点。</li>
+<li>apache/2.2.8 -401 -302：表示跳过显示401的非法页或302删除页。</li>
+</ul>
+<p>6．组合搜索</p>
+<ul>
+<li>IIS/7.0 hostname:YourCompany.com city:Boston表示搜索在波士顿所有正在运行IIS/7.0的Microsoft服务器。</li>
+<li>IIS/5.0 hostname:YourCompany.com country:FR表示搜索在法国所有运行IIS/5.0的系统。</li>
+<li>Title:camera hostname:YourCompany.com表示在某台主机中标题为camera的信息。</li>
+<li>geo:33.5,36.3 os:Linux表示使用坐标轴（经度33.5，纬度36.3）的形式搜索Linux操作系统。</li>
+</ul>
+<p>7．其他搜索术语</p>
+<ul>
+<li>Port：通过端口号搜索。</li>
+<li>OS：通过操作系统搜索。</li>
+<li>After或Before：使用时间搜索服务。<br>
+【实例4-6】使用Metasploit实现Shodan搜索。具体操作步骤如下所示。<br>
+（1）在Shodanhq.com网站注册一个免费的账户。<br>
+（2）从http://www.shodanhq.com/api_doc网站获取API key，获取界面如图4.8所示。获取API key，为了在后面使用。</li>
+</ul>
+<img src="00159.jpeg" width="85%" height="85%">
+<p>图4.8 获取的API key</p>
+<p>（3）启动PostgreSQL服务。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># service postgresql start</span></span><br></pre></td></tr></table></figure>
+<p>（4）启动Metasploit服务。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># service metasploit start</span></span><br></pre></td></tr></table></figure>
+<p>（5）启动MSF终端，执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># msfconsole</span></span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+<p>（6）选择auxiliary/gather/shodan_search模块，并查看该模块下可配置的选项参数。执行命令如下所示：</p>
+<img src="00160.jpeg" width="85%" height="85%">
+<p>从以上输出信息中，可以看到有四个必须配置选项参数。其中有两个选项已经配置，QUERY和SHODAN_APIKEY还没有配置。<br>
+（7）配置QUERY和SHODAN_APIKEY选项参数。执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">msf auxiliary(shodan_search) &gt; <span class="built_in">set</span> SHODAN_APIKEY duV9vwgCmo0oDfWqfWafax8sj0ZUa5BU</span><br><span class="line">SHODAN_APIKEY =&gt; duV9vwgCmo0oDfWqfWafax8sj0ZUa5BU</span><br><span class="line">msf auxiliary(shodan_search) &gt; <span class="built_in">set</span> QUERY iomega</span><br><span class="line">QUERY =&gt; iomega</span><br></pre></td></tr></table></figure>
+<p>从输出的信息中，可以看到QUERY和SHODAN_APIKEY选项成功配置。<br>
+（8）启动搜索引擎。执行命令如下所示：</p>
+<img src="00161.jpeg" width="85%" height="85%">
+<p>以上输出的信息显示了匹配iomega关键字的所有信息。搜索的结果显示了四列，分别表示IP地址、城市、国家和主机名。如果想要使用过滤关键字或得到更多的响应页，用户必须要购买一个收费的APIkey。</p>
+<h1 id="使用maltego收集信息">使用Maltego收集信息</h1>
+<p>Maltego是一个开源的漏洞评估工具，它主要用于论证一个网络内单点故障的复杂性和严重性。该工具能够聚集来自内部和外部资源的信息，并且提供一个清晰的漏洞分析界面。本节将使用Kali Linux操作系统中的Maltego，演示该工具如何帮助用户收集信息。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>在使用Maltego工具之前，需要到 <a href="https://www.paterva.com/web6/community/maltego/" target="_blank" rel="noopener">https://www.paterva.com/web6/community/maltego/</a> 网站注册一个账号。注册界面如图4.9所示。</p>
+<img src="00162.jpeg" width="85%" height="85%">
+<p>图4.9 注册账号<br>
+在该界面填写正确信息后，单击Register按钮，将完成注册。此时，注册账号时使用的邮箱将会收到一份邮件，登录邮箱，将用户账户激活。</p>
+<h2 id="使用maltego工具">使用Maltego工具</h2>
+<p>使用Maltego工具收集信息。具体操作步骤如下所示：</p>
+<p>（1）启动Maltego工具。依次选择“应用程序”|Kali Linux|“信息收集”|“情报分析”|maltego命令，将显示如图4.10所示的界面。</p>
+<img src="00163.jpeg" width="85%" height="85%">
+<p>图4.10 Maltego欢迎界面</p>
+<p>（2）在该界面单击Next按钮，将显示如图4.11所示的界面。</p>
+<img src="00164.jpeg" width="85%" height="85%">
+<p>图4.11 登录界面<br>
+（3）在该界面输入前面注册用户时的邮箱地址和密码及验证码。然后单击Next按钮，将显示如图4.12所示的界面。</p>
+<img src="00165.jpeg" width="85%" height="85%">
+<p>图4.12 登录成功<br>
+（4）该界面显示了登录结果信息。此时，单击Next按钮，将显示如图4.13所示的 界面。</p>
+<img src="00166.jpeg" width="85%" height="85%">
+<p>图4.13 选择转换节点<br>
+（5）在该界面发现转换节点信息的来源。然后单击Next按钮，将显示如图4.14所示的界面。</p>
+<img src="00167.jpeg" width="85%" height="85%">
+<p>图4.14 更新转换节点<br>
+（6）在该界面选择怎样使用Maltego，这里选择默认的选项Run a machine(NEW!!)。然后单击Finish按钮，将显示如图4.15所示的界面。</p>
+<img src="00168.jpeg" width="85%" height="85%">
+<p>图4.15 选择主机<br>
+（7）该界面用来选择运行的主机，这里选择Company Stalker（组织网）选项。然后单击Next按钮，将显示如图4.16所示的界面。</p>
+<img src="00169.jpeg" width="85%" height="85%">
+<p>图4.16 指定目标<br>
+（8）在该界面输入一个域名。然后单击Finish按钮，将显示如图4.17所示的界面。</p>
+<img src="00170.jpeg" width="85%" height="85%">
+<p>图4.17 Results Limited<br>
+（9）该界面提示信息在paterva.com主机中仅限于12个实体。在该界面选择Don’t show again，然后单击OK按钮，将显示如图4.18所示的界面。</p>
+<img src="00171.jpeg" width="85%" height="85%">
+<p>图4.18 运行的主机<br>
+（10）<a href="http://xn--paterva-rp4k39xka9537avhsqx8b7tdk7mvj9es2yb.com" target="_blank" rel="noopener">该界面显示了刚创建的paterva.com</a>。如果没显示，在右侧栏Palette下选择Domain，然后用鼠标拖拽域名到Graph中。在该界面选择paterva.com域名，将会在右侧栏显示paterva.com域名的相关信息，如图4.19所示。该域名的信息可以修改，如修改域名。单击Property View框中的Domain Name，将鼠标选中当前的域名就可以修改。例如，<a href="http://xn--paterva-6x3l27zyxkro7eos5cmkf.xn--comtargethost-ko1uf2r5v9g.com" target="_blank" rel="noopener">将这里的域名paterva.com修改为targethost.com</a>，将显示如图4.20所示的界面。</p>
+<img src="00172.jpeg" width="85%" height="85%">
+<p>图4.19 paterva.com信息</p>
+<img src="00173.jpeg" width="85%" height="85%">
+<p>图4.20 targethost.com信息</p>
+<p>（11）一旦目标主机设置成功后，用户就可以启动收集信息。首先右击创建的域实体，并选择Run Transform将显示有效的选项，如图4.21所示。</p>
+<img src="00174.jpeg" width="85%" height="85%">
+<p>图4.21 启动收集信息</p>
+<p>（12）在该界面可以选择寻找DNS名，执行WHOIS和获取电子邮件地址等等。或者选择运行所有转换，显示结果如图4.22所示。</p>
+<img src="00175.jpeg" width="85%" height="85%">
+<p>图4.22 信息收集<br>
+（13）从该界面可以看到获取了很多关于targethost.com的信息。用户也可以使用同样的方法，单击子节点获取想要查看的信息。<br>
+用户可以使用Maltego映射网络。Maltego是由Paterva创建的一个开源工具，用于信息收集和取证。前面分别介绍了Maltego的安装向导，通过拖曳它到图表中并使用该域实体。现在将学习允许Maltego去绘制自己的图表，并检查各种来源完成工作。因为用户可以利用这一点自动化快速地在目标网络内收集信息，如电子邮件地址、服务器和执行WHOIS查询等。</p>
+<p>用户可以通过Transform Manager窗口中All Transforms标签，启动和禁用转换节点，如图4.23所示。</p>
+<img src="00176.jpeg" width="85%" height="85%">
+<p>图4.23 Transform Manager界面<br>
+在该界面列出了所有转换节点。为了能够使用几个转换节点，必须先接受disclaimer。接受disclaimer的方法，在该界面选择转换节点后，单击最底部的View disclaimer按钮，将显示如图4.24所示的界面。</p>
+<img src="00177.jpeg" width="85%" height="85%">
+<p>图4.24 Transform Disclaimer</p>
+<p>在该界面将I accept the above disclaimer复选框勾上，然后单击Close按钮就可以了。</p>
+<h1 id="绘制网络结构图">绘制网络结构图</h1>
+<p>CaseFile工具用来绘制网络结构图。使用该工具能快速添加和连接，并能以图形界面形式灵活的构建网络结构图。本节将介绍Maltego CaseFile的使用。<br>
+在使用CaseFile工具之前，需要修改系统使用的Java和Javac版本。因为CaseFile工具是用Java开发的，而且该工具必须运行在Java1.7.0版本上。但是在Kali Linux中，安装了JDK6和JDK7，而CaseFile默认使用的是JDK6。此时运行CaseFile工具后，图形界面无法显示菜单栏。所以就需要改变JDK版本，改变JDK版本的方法如下所示。<br>
+使用update-alternatives命令修改java命令版本。执行命令如下所示：<br>
+<img src="00178.jpeg" width="85%" height="85%"></p>
+<p>从输出的信息中可以看到已经修改为JDK7版本，而且是手动模式。或者使用java命令查看当前的版本信息，执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># java -version</span></span><br><span class="line">java version <span class="string">"1.7.0_25"</span></span><br><span class="line">OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1~deb7u1)</span><br><span class="line">OpenJDK Server VM (build 23.7-b01, mixed mode)</span><br></pre></td></tr></table></figure>
+<p>从以上结果中可以确定当前系统的java命令版本是1.7.0。<br>
+使用update-alternatives命令修改javac命令版本。执行命令如下所示：</p>
+<img src="00179.jpeg" width="85%" height="85%">
+<p>从输出的信息中可以看到已经修改为JDK7版本，而且是手动模式。这时，再使用javac命令查看当前的版本信息，执行命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oot@kali:~<span class="comment"># javac -version</span></span><br><span class="line">java version <span class="string">"1.7.0_25"</span></span><br></pre></td></tr></table></figure>
+<p>从以上结果中可以确定当前系统的javac命令版本是1.7.0。<br>
+【实例4-7】使用CaseFile工具绘制一个网络结构图。具体操作步骤如下所示。<br>
+（1）启动CaseFile。依次选择“应用程序”|Kali Linux|“信息收集”|“情报分析”|casefile命令，将显示如图4.25所示的界面。</p>
+<img src="00180.jpeg" width="85%" height="85%">
+<p>图4.25 欢迎界面</p>
+<p>（2）该界面是一个欢迎信息，这里单击Next按钮，将显示如图4.26所示的界面。</p>
+<img src="00181.jpeg" width="85%" height="85%">
+<p>图4.26 设置向导<br>
+（3）该界面选择将要进行什么操作。这里选择Open a blank graph and let me play around，然后单击Finish按钮，将显示如图4.27所示的界面。</p>
+<img src="00182.jpeg" width="85%" height="85%">
+<p>图4.27 初始界面<br>
+（4）从该界面可以看到没有任何信息，因为默认没有选择任何设备。该工具和Maltego工具一样，需要从组件Palette中拖曳每个实体到图表中。本例中选择拖曳域实体，并且改变域属性，如图4.28所示。</p>
+<img src="00183.jpeg" width="85%" height="85%">
+<p>图4.28 域名实体<br>
+（5）在该界面可以为域添加一个注释。将鼠标指到域实体上，然后双击注释图标，将显示如图4.29所示的界面。</p>
+<img src="00184.jpeg" width="85%" height="85%">
+<p>图4.29 添加注释<br>
+（6）在该界面可以看到添加的注释信息，该信息可以修改。将鼠标点到注释信息的位置即可修改。在该界面还可以拖曳其他实体，这里拖另一个实体域名，用来记录来自目标主机的DNS信息，如图4.30所示。</p>
+<img src="00185.jpeg" width="85%" height="85%">
+<p>图4.30 域名实体<br>
+（7）在该界面可以将这两个实体连接起来。只需要拖一个线，从一个实体到另一个实体即可，如图4.31所示。</p>
+<img src="00186.jpeg" width="85%" height="85%">
+<p>图4.31 连接两个实体<br>
+（8）连接两个实体后，将显示如图4.32所示的界面。</p>
+<img src="00187.jpeg" width="85%" height="85%">
+<p>图4.32 线条属性界面<br>
+（9）该界面用来设置线条的属性。可以修改线的粗细、格式和颜色等。<br>
+（10）重复以上第（5）、（6）、（7）和（8）步骤添加更多信息，来绘制网络图。下面绘制一个简单的组织网络结构图，如图4.33所示。</p>
+<img src="00188.jpeg" width="85%" height="85%">
+<p>图4.33 组织网络</p>
+<p>（11）从该界面可以看到一个组织网络结构图。此时用户可以保存该图，如果需要的时候，以后可以打开并编辑该图。如果需要重新打开一个Graph窗口，可以单击左上角的<img src="00189.jpeg">或者<img src="00190.jpeg">图标，如图4.34所示。</p>
+<img src="00191.jpeg" width="85%" height="85%">
+<p>图4.34 新建Graph<br>
+在该界面单击New按钮，将会创建一个新的Graph，此时会命名为New Graph(2)，如图4.35所示。</p>
+<img src="00192.jpeg" width="85%" height="85%">
+<p>图4.35 新建的New Graph(2)</p>
+<blockquote>
+<p>引用与 <a href="https://wizardforcel.gitbooks.io/daxueba-kali-linux-tutorial/content/17.html" target="_blank" rel="noopener">https://wizardforcel.gitbooks.io/daxueba-kali-linux-tutorial/content/17.html</a></p>
+</blockquote>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/article/配置Kali-Linux/" data-toggle="tooltip" data-placement="top" title="[Kali] 配置Kali Linux">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+                
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2321804269"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#枚举服务"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x679A;&#x4E3E;&#x670D;&#x52A1;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#dns枚举工具dnsenum"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">DNS&#x679A;&#x4E3E;&#x5DE5;&#x5177;DNSenum</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#dns枚举工具fierce"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">DNS&#x679A;&#x4E3E;&#x5DE5;&#x5177;fierce</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#snmp枚举工具snmpwalk"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">SNMP&#x679A;&#x4E3E;&#x5DE5;&#x5177;Snmpwalk</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#snmp枚举工具snmpcheck"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">SNMP&#x679A;&#x4E3E;&#x5DE5;&#x5177;Snmpcheck</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#smtp枚举工具smtp-user-enum"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">SMTP&#x679A;&#x4E3E;&#x5DE5;&#x5177;smtp-user-enum</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#测试网络范围"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x6D4B;&#x8BD5;&#x7F51;&#x7EDC;&#x8303;&#x56F4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#域名查询工具dmitry"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">&#x57DF;&#x540D;&#x67E5;&#x8BE2;&#x5DE5;&#x5177;DMitry</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#跟踪路由工具scapy"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">&#x8DDF;&#x8E2A;&#x8DEF;&#x7531;&#x5DE5;&#x5177;Scapy</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#识别活跃的主机"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x8BC6;&#x522B;&#x6D3B;&#x8DC3;&#x7684;&#x4E3B;&#x673A;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#网络映射器工具nmap"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">&#x7F51;&#x7EDC;&#x6620;&#x5C04;&#x5668;&#x5DE5;&#x5177;Nmap</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用nmap识别活跃主机"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;Nmap&#x8BC6;&#x522B;&#x6D3B;&#x8DC3;&#x4E3B;&#x673A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#查看打开的端口"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x67E5;&#x770B;&#x6253;&#x5F00;&#x7684;&#x7AEF;&#x53E3;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#tcp端口扫描工具nmap"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">TCP&#x7AEF;&#x53E3;&#x626B;&#x63CF;&#x5DE5;&#x5177;Nmap</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#图形化tcp端口扫描工具zenmap"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">&#x56FE;&#x5F62;&#x5316;TCP&#x7AEF;&#x53E3;&#x626B;&#x63CF;&#x5DE5;&#x5177;Zenmap</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系统指纹识别"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x7CFB;&#x7EDF;&#x6307;&#x7EB9;&#x8BC6;&#x522B;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用nmap工具识别系统指纹信息"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;Nmap&#x5DE5;&#x5177;&#x8BC6;&#x522B;&#x7CFB;&#x7EDF;&#x6307;&#x7EB9;&#x4FE1;&#x606F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#指纹识别工具p0f"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">&#x6307;&#x7EB9;&#x8BC6;&#x522B;&#x5DE5;&#x5177;p0f</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#服务的指纹识别"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">&#x670D;&#x52A1;&#x7684;&#x6307;&#x7EB9;&#x8BC6;&#x522B;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用nmap工具识别服务指纹信息"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;Nmap&#x5DE5;&#x5177;&#x8BC6;&#x522B;&#x670D;&#x52A1;&#x6307;&#x7EB9;&#x4FE1;&#x606F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#服务枚举工具amap"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">&#x670D;&#x52A1;&#x679A;&#x4E3E;&#x5DE5;&#x5177;Amap</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#其他信息收集手段"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x6536;&#x96C6;&#x624B;&#x6BB5;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#recon-ng框架"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">Recon-NG&#x6846;&#x67B6;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#arp侦查工具netdiscover"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">ARP&#x4FA6;&#x67E5;&#x5DE5;&#x5177;Netdiscover</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#搜索引擎工具shodan"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5DE5;&#x5177;Shodan</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#使用maltego收集信息"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;Maltego&#x6536;&#x96C6;&#x4FE1;&#x606F;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备工作"><span class="toc-nav-number">8.1.</span> <span class="toc-nav-text">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用maltego工具"><span class="toc-nav-number">8.2.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;Maltego&#x5DE5;&#x5177;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#绘制网络结构图"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">&#x7ED8;&#x5236;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x56FE;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/" target="_blank">CSDN Blog</a></li>
+                    
+                        <li><a href="http://dockone.io/people/" target="_blank">DockOne</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/" target="_blank">阿里云栖社区 </a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/c0n6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/c0n6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/c0n6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/c0n6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; C0N6 2018 
+                    <br>
+                    Theme by <a href="http://c0n6.com">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://c0n6.com">C0N6</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=c0n6&repo=hexo-theme-c0n6&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://c0n6.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxxxxxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://c0n6.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
